@@ -7,7 +7,7 @@ import Image from 'next/image'
 
 const index: NextPage = () => {
   return (
-    <div className=" relative min-h-screen min-w-full items-center justify-center overflow-auto bg-black">
+    <div className=" relative min-h-screen min-w-screen overflow-auto bg-black">
       <Header />
       <div className=" mt-24">
         <div className="flex flex-wrap  items-center justify-between px-2 md:px-0">
@@ -148,6 +148,7 @@ const index: NextPage = () => {
       </div>
       <Footer />
       {/* </div> */}
+    </div>
     </div>
   )
 }
