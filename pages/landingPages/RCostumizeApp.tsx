@@ -8,7 +8,7 @@ const RCostumizeApp: NextPage = () => {
       <LoginHeader />
       <div
         style={{
-          backgroundImage: "url('/images/LandingPagee.png')",
+          backgroundImage: "url('/images/LandingPage.png')",
         }}
         className="flex h-screen w-screen flex-col items-center justify-center bg-cover bg-center"
       >

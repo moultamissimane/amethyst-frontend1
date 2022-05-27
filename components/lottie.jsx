@@ -18,4 +18,3 @@ const Lottie = () => {
     return <div style={{ height: 350, width: 500 }} ref={anime}></div>
 }
 export default Lottie;
-    

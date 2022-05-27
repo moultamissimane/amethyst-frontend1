@@ -21,7 +21,7 @@ const CustomizeYourApp = () => {
       <LoginHeader />
       <div
         style={{
-          backgroundImage: "url('/images/LandingPagee.png')",
+          backgroundImage: "url('/images/LandingPage.png')",
         }}
         className="flex h-screen w-screen flex-col items-center justify-center bg-cover bg-center"
       >
@@ -34,7 +34,7 @@ const CustomizeYourApp = () => {
             <span className='text-lg font-bold'>{e.text}</span>
           </div>
            ))}
-            <button className='bg-white text-black hover:bg-gradient-to-r from-sky-600 to-fuchsia-600 hover:text-white font-bold text-xl rounded-lg w-36 flex justify-center mt-6 p-2'>Continue</button>
+            <a href='CostumizeApp2' className='bg-white text-black hover:bg-gradient-to-r from-sky-600 to-fuchsia-600 hover:text-white font-bold text-xl rounded-lg w-36 flex justify-center mt-6 p-2'>Continue</a>
 
           </div>
           

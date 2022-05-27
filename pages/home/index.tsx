@@ -2,195 +2,267 @@ import React from 'react'
 import { NextPage } from 'next'
 import Header from '../../components/Header'
 import Lottie from '../../components/lottie'
+// import { Carousel } from '../../components/Carousel'
+import Footer from '../../components/Footer'
 
 const home: NextPage = () => {
   return (
     <div className="relative flex min-h-screen min-w-full items-center justify-center overflow-auto bg-black">
       <Header />
-      <div className="container m-auto px-6 pt-32 md:px-12 lg:px-7 lg:pt-[4.8rem]">
-        <div className="flex flex-wrap items-center justify-between px-2 md:px-0">
-          <div></div>
+      <div className="m-auto">
+        <div className="mt-24 flex flex-wrap items-center justify-between px-2 md:px-0">
           <div className="-mt-5 lg:w-6/12 lg:py-24 xl:py-32 ">
             <Lottie />
           </div>
-          <div className="w-full lg:-mb-56 lg:w-6/12">
-            <p className="text-center text-xl font-bold text-white  lg:w-10/12">
+          <div className="w-full lg:w-6/12">
+            <p className="text-center indent-8 text-xl font-bold text-white  lg:w-10/12">
               <br /> Meditation is the right solution for your problems.
               Meditation can help you in all aspects of your life. It helps to
               increase your creativity, improve relationships, reduce stress and
               anxiety and much more.
             </p>
-            <div className="mr-24  flex items-center justify-center  space-y-4">
+            <div className="mr-24  flex items-center justify-center space-y-4">
               <button className="mt-10 rounded-lg bg-white px-2 py-3 font-bold text-black shadow-lg shadow-purple-500">
                 Get Started
               </button>
             </div>
           </div>
-          <div className="flex items-end justify-center space-y-4">
-            <button className="animate-pulse" title="Scroll to Next Section">
-              <div className="h-7 w-4 animate-bounce rounded-lg border-2 border-white">
-                <div className="mx-auto mt-1 h-3 w-1 rounded-xl border-2 border-white"></div>
-              </div>
-              <span className="-ml-8 text-white">Scroll Down</span>
-            </button>
+        </div>
+        <div className="flex items-end justify-center space-y-4">
+          <div className="animate-pulse" title="Scroll to Next Section">
+            <div className="h-7 w-4 animate-bounce rounded-lg border-2 border-white">
+              <div className="mx-auto mt-1 h-3 w-1 rounded-xl border-2 border-white"></div>
+            </div>
+            <span className="-ml-8 mb-20 text-white">Scroll Down</span>
           </div>
         </div>
 
-        <section className="flex w-full justify-center mt-14 rounded-2xl  lg:pt-[70px] lg:pb-8">
-          <div className="container w-full">
-              <h2 className='flex justify-center mb-6 text-white text-4xl'>hi</h2>
-            <div className="-mx-4 flex flex-wrap">
-              <div className="w-full px-4 md:w-1/2 xl:w-1/3">
-                <div className="mb-10 overflow-hidden rounded-lg bg-slate-900">
-                  <img
-                    src="/images/LandingPage.png"
-                    alt="image"
-                    className="w-full"
-                  />
-                  <div className="p-8 text-center sm:p-9 md:p-7 xl:p-9">
-                    <h3>
-                      <a
-                        href=""
-                        className="
-                        hover:text-primary
-                        mb-4 
-                        block
-                        text-xl
-                        font-semibold
-                        text-white
-                        sm:text-[22px]
-                        md:text-xl
-                        lg:text-[22px]
-                        "
-                      >
-                        50+ Best creative website themes & templates
-                      </a>
-                    </h3>
-                    <p className="mb-7 text-base leading-relaxed text-white">
-                      Lorem ipsum dolor sit amet pretium consectetur adipiscing
-                      elit. Lorem consectetur adipiscing elit.
-                    </p>
-                    <a
-                      href="/sleep"
-                      className="
-                     inline-block
-                     rounded-full
-                     border border-[#E5E7EB]
-                     py-2
-                     px-7 text-base
-                     font-medium
-                     text-white transition hover:bg-blue-600
-                     hover:text-white
-                     "
-                    >
-                      View Details
-                    </a>
+        <div className="mt-20 flex justify-between gap-3 bg-white p-4 lg:grid-cols-2 ">
+          <div className="mx-7">
+            <h1 className="mt-10 text-4xl font-bold text-black">
+              Discover the best sounds to help you meditate
+            </h1>
+            <p className="mt-10 text-lg text-slate-900">
+              Discover the best sounds to help you meditate and relax with
+              <br /> this timer, which automatically plays sounds at a pace
+              matched <br />
+              to your breathing pattern. Find your zen in seconds with these
+              custom <br /> meditation timers, which are perfect for setting the
+              tone of any session.
+            </p>
+          </div>
+          {/* <div className=""> */}
+            {/* <div className=""> */}
+            <div className='w-3/4 flex-row-reverse'>
+              <video className="rounded-2xl" autoPlay loop muted>
+                <source
+                  src="/images/Caaandle.mp4"
+                  type="video/mp4"
+                />
+              </video>
+            </div>
+        </div>
+
+        <div className="mt-10 flex justify-between gap-3  bg-black p-4 lg:grid-cols-2 ">
+            <div className="w-3/4">
+              <video className="-mt-8 rounded-2xl" autoPlay loop muted>
+                <source
+                  src="/images/pexels-ekaterina-bolovtsova-6768265.mp4"
+                  type="video/mp4"
+                />
+              </video>
+            </div>
+          
+          <div className="mx-7">
+            <h1 className="mt-10 text-4xl font-bold text-white">
+              Discover the best sounds to help you sleep
+            </h1>
+            <p className="mt-10 text-lg text-slate-100">
+            Discover the best sounds for you to help you fall <br /> asleep easier, faster, and more soundly. 
+            Our sleep timer will automatically shut down the sound after a specified period of time has elapsed.
+            </p>
+          </div>
+          <div className="relative overflow-hidden rounded-xl">
+            <div className="absolute mb-20 flex rounded-xl object-cover"></div>
+
+            {/* <image className="w-full" src="https://images.unsplash.com/photo-1489516408517-0c0a15662682?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=774&q=80" /> */}
+          </div>
+        </div>
+        <div className="bg-white p-10">
+          <div className="mx-auto  max-w-xl text-center">
+            <h1 className=" text-4xl font-bold text-black ">
+              Testimonials
+            </h1>
+          </div>
+          <div className="text-center mb-10">
+                    <span className="inline-block w-1 h-1 rounded-full bg-[#703698] ml-1"></span>
+                    <span className="inline-block w-3 h-1 rounded-full bg-[#703698] ml-1"></span>
+                    <span className="inline-block w-40 h-1 rounded-full bg-[#703698] ml-1"></span>
+                    <span className="inline-block w-3 h-1 rounded-full bg-[#703698] ml-1"></span>
+                    <span className="inline-block w-1 h-1 rounded-full bg-[#703698] ml-1"></span>
+                </div>
+          <div className="-mx-3 mt-10 items-start md:flex">
+            <div className="px-3 md:w-1/3">
+              <div className="mx-auto mb-6 w-full rounded-lg border-4 border-[#703698] shadow-md shadow-[#703698] bg-white p-5 font-light text-gray-800">
+                <div className="mb-4 flex w-full items-center">
+                  <div className="h-10 w-10 overflow-hidden rounded-full border border-gray-200 bg-gray-50">
+                    <img src="https://i.pravatar.cc/100?img=1" alt="" />
+                  </div>
+                  <div className="flex-grow pl-3">
+                    <h6 className="text-sm font-bold uppercase text-gray-600">
+                      Kenzie Edgar.
+                    </h6>
                   </div>
                 </div>
-              </div>
-              <div className="w-full px-4 md:w-1/2 xl:w-1/3">
-                <div className="mb-10 overflow-hidden rounded-lg bg-slate-900">
-                  <img
-                    src="https://cdn.tailgrids.com/1.0/assets/images/cards/card-01/image-02.jpg"
-                    alt="image"
-                    className="w-full"
-                  />
-                  <div className="p-8 text-center sm:p-9 md:p-7 xl:p-9">
-                    <h3>
-                      <a
-                        href="/meditation"
-                        className="
-                        text-dark
-                        hover:text-primary mb-4
-                        block
-                        text-xl
-                        font-semibold
-                        sm:text-[22px]
-                        md:text-xl
-                        lg:text-[22px]
-                        xl:text-xl
-                        2xl:text-[22px]
-                        "
-                      >
-                        The ultimate UX and UI guide to card design
-                      </a>
-                    </h3>
-                    <p className="text-body-color mb-7 text-base leading-relaxed">
-                      Lorem ipsum dolor sit amet pretium consectetur adipiscing
-                      elit. Lorem consectetur adipiscing elit.
-                    </p>
-                    <a
-                      href="javascript:void(0)"
-                      className="
-                     text-body-color
-                     hover:border-primary
-                     hover:bg-primary
-                     inline-block rounded-full
-                     border
-                     border-[#E5E7EB] py-2
-                     px-7
-                     text-base font-medium transition
-                     hover:text-white
-                     "
-                    >
-                      View Details
-                    </a>
-                  </div>
+                <div className="w-full">
+                  <p className="text-sm leading-tight">
+                    <span className="mr-1 text-lg font-bold italic leading-none text-gray-400">
+                      "
+                    </span>
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                    Quos sunt ratione dolor exercitationem minima quas itaque
+                    saepe quasi architecto vel! Accusantium, vero sint
+                    recusandae cum tempora nemo commodi soluta deleniti.
+                    <span className="ml-1 text-lg font-bold italic leading-none text-gray-400">
+                      "
+                    </span>
+                  </p>
                 </div>
               </div>
-              <div className="w-full px-4 md:w-1/2 xl:w-1/3">
-                <div className="mb-10 overflow-hidden rounded-lg bg-white">
-                  <img
-                    src="https://cdn.tailgrids.com/1.0/assets/images/cards/card-01/image-03.jpg"
-                    alt="image"
-                    className="w-full"
-                  />
-                  <div className="p-8 text-center sm:p-9 md:p-7 xl:p-9">
-                    <h3>
-                      <a
-                        href="javascript:void(0)"
-                        className="
-                        text-dark
-                        hover:text-primary mb-4
-                        block
-                        text-xl
-                        font-semibold
-                        sm:text-[22px]
-                        md:text-xl
-                        lg:text-[22px]
-                        xl:text-xl
-                        2xl:text-[22px]
-                        "
-                      >
-                        Creative Card Component designs graphic elements
-                      </a>
-                    </h3>
-                    <p className="text-body-color mb-7 text-base leading-relaxed">
-                      Lorem ipsum dolor sit amet pretium consectetur adipiscing
-                      elit. Lorem consectetur adipiscing elit.
-                    </p>
-                    <a
-                      href="javascript:void(0)"
-                      className="
-                     text-body-color
-                     hover:border-primary
-                     hover:bg-primary
-                     inline-block rounded-full
-                     border
-                     border-[#E5E7EB] py-2
-                     px-7
-                     text-base font-medium transition
-                     hover:text-white
-                     "
-                    >
-                      View Details
-                    </a>
+              <div className="mx-auto mb-6 w-full rounded-lg border-4 border-[#703698] shadow-md shadow-[#703698] bg-white p-5 font-light text-gray-800">
+                <div className="mb-4 flex w-full items-center">
+                  <div className="h-10 w-10 overflow-hidden rounded-full border border-gray-200 bg-gray-50">
+                    <img src="https://i.pravatar.cc/100?img=2" alt="" />
                   </div>
+                  <div className="flex-grow pl-3">
+                    <h6 className="text-sm font-bold uppercase text-gray-600">
+                      Stevie Tifft.
+                    </h6>
+                  </div>
+                </div>
+                <div className="w-full">
+                  <p className="text-sm leading-tight">
+                    <span className="mr-1 text-lg font-bold italic leading-none text-gray-400">
+                      "
+                    </span>
+                    Lorem ipsum, dolor sit amet, consectetur adipisicing elit.
+                    Dolore quod necessitatibus, labore sapiente, est,
+                    dignissimos ullam error ipsam sint quam tempora vel.
+                    <span className="ml-1 text-lg font-bold italic leading-none text-gray-400">
+                      "
+                    </span>
+                  </p>
+                </div>
+              </div>
+            </div>
+            <div className="px-3 md:w-1/3">
+              <div className="mx-auto mb-6 w-full rounded-lg border-4 border-[#703698] shadow-md shadow-[#703698] bg-white p-5 font-light text-gray-800">
+                <div className="mb-4 flex w-full items-center">
+                  <div className="h-10 w-10 overflow-hidden rounded-full border border-gray-200 bg-gray-50">
+                    <img src="https://i.pravatar.cc/100?img=3" alt="" />
+                  </div>
+                  <div className="flex-grow pl-3">
+                    <h6 className="text-sm font-bold uppercase text-gray-600">
+                      Tommie Ewart.
+                    </h6>
+                  </div>
+                </div>
+                <div className="w-full">
+                  <p className="text-sm leading-tight">
+                    <span className="mr-1 text-lg font-bold italic leading-none text-gray-400">
+                      "
+                    </span>
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                    Vitae, obcaecati ullam excepturi dicta error deleniti sequi.
+                    <span className="ml-1 text-lg font-bold italic leading-none text-gray-400">
+                      "
+                    </span>
+                  </p>
+                </div>
+              </div>
+              <div className="mx-auto mb-6 w-full rounded-lg border-4 border-[#703698] shadow-md shadow-[#703698] bg-white p-5 font-light text-gray-800">
+                <div className="mb-4 flex w-full items-center">
+                  <div className="h-10 w-10 overflow-hidden rounded-full border border-gray-200 bg-gray-50">
+                    <img src="https://i.pravatar.cc/100?img=4" alt="" />
+                  </div>
+                  <div className="flex-grow pl-3">
+                    <h6 className="text-sm font-bold uppercase text-gray-600">
+                      Charlie Howse.
+                    </h6>
+                  </div>
+                </div>
+                <div className="w-full">
+                  <p className="text-sm leading-tight">
+                    <span className="mr-1 text-lg font-bold italic leading-none text-gray-400">
+                      "
+                    </span>
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                    Architecto inventore voluptatum nostrum atque, corrupti,
+                    vitae esse id accusamus dignissimos neque reprehenderit
+                    natus, hic sequi itaque dicta nisi voluptatem! Culpa, iusto.
+                    <span className="ml-1 text-lg font-bold italic leading-none text-gray-400">
+                      "
+                    </span>
+                  </p>
+                </div>
+              </div>
+            </div>
+            <div className="px-3 md:w-1/3">
+              <div className="mx-auto mb-6 w-full rounded-lg border-4 border-[#703698] shadow-md shadow-[#703698] bg-white p-5 font-light text-gray-800">
+                <div className="mb-4 flex w-full items-center">
+                  <div className="h-10 w-10 overflow-hidden rounded-full border border-gray-200 bg-gray-50">
+                    <img src="https://i.pravatar.cc/100?img=5" alt="" />
+                  </div>
+                  <div className="flex-grow pl-3">
+                    <h6 className="text-sm font-bold uppercase text-gray-600">
+                      Nevada Herbertson.
+                    </h6>
+                  </div>
+                </div>
+                <div className="w-full">
+                  <p className="text-sm leading-tight">
+                    <span className="mr-1 text-lg font-bold italic leading-none text-gray-400">
+                      "
+                    </span>
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                    Nobis, voluptatem porro obcaecati dicta, quibusdam sunt
+                    ipsum, laboriosam nostrum facere exercitationem pariatur
+                    deserunt tempora molestiae assumenda nesciunt alias eius?
+                    Illo, autem!
+                    <span className="ml-1 text-lg font-bold italic leading-none text-gray-400">
+                      "
+                    </span>
+                  </p>
+                </div>
+              </div>
+              <div className="mx-auto mb-6 w-full rounded-lg border-4 border-[#703698] shadow-md shadow-[#703698] bg-white p-5 font-light text-gray-800">
+                <div className="mb-4 flex w-full items-center">
+                  <div className="h-10 w-10 overflow-hidden rounded-full border border-gray-200 bg-gray-50">
+                    <img src="https://i.pravatar.cc/100?img=6" alt="" />
+                  </div>
+                  <div className="flex-grow pl-3">
+                    <h6 className="text-sm font-bold uppercase text-gray-600">
+                      Kris Stanton.
+                    </h6>
+                  </div>
+                </div>
+                <div className="w-full">
+                  <p className="text-sm leading-tight">
+                    <span className="mr-1 text-lg font-bold italic leading-none text-gray-400">
+                      "
+                    </span>
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                    Voluptatem iusto, explicabo, cupiditate quas totam!
+                    <span className="ml-1 text-lg font-bold italic leading-none text-gray-400">
+                      "
+                    </span>
+                  </p>
                 </div>
               </div>
             </div>
           </div>
-        </section>
+        </div>
+        <Footer />
       </div>
     </div>
   )

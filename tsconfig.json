@@ -15,6 +15,6 @@
     "jsx": "preserve",
     "incremental": true
   },
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", "components/lottie.jsx", "components/loader.jsx"],
+  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", "components/lottie.jsx", "components/loader.jsx", "components/Carousel.jsx", "components/Footer.jsx", "pages/playlist.tsx", "pages/home/index.jsx"],
   "exclude": ["node_modules"]
 }

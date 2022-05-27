@@ -31,7 +31,7 @@ const LoginHeader = () => {
                   className="flex rounded-full p-2 border-white border-4 flex-col px-6 py-1 md:flex-row md:items-center"
                   href="#"
                 >
-                  Try Amethyst for free
+                  Try Amethyst Premium
                 </a>
               </div>
             </div>

@@ -17,9 +17,9 @@ const FCostumizing: NextPage = () => {
           Great You App Is Ready! Let's Help You Get some 
           <br />Comfortable Sleep
           </p>
-          <div className="top-0 my-7 flex items-center rounded-2xl  bg-white  px-32 py-3 text-xl font-bold text-black hover:bg-gradient-to-r from-sky-600 to-fuchsia-600 hover:text-white">
+          <a href='/auth/login' className="top-0 my-7 flex items-center rounded-2xl  bg-white  px-32 py-3 text-xl font-bold text-black hover:bg-gradient-to-r from-sky-600 to-fuchsia-600 hover:text-white">
             Continue
-          </div>
+          </a>
         </div>
       </div>
     </div>

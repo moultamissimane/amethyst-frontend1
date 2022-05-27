@@ -15,24 +15,24 @@ const Header = () => {
             className="w-20 p-2 md:hidden lg:hidden xl:hidden"
           />
           <div className="flex w-full justify-center font-semibold text-white">
-            <a className="flex px-6 py-1 md:flex-row md:items-center" href="#">
+            <a className="flex px-6 py-1 md:flex-row md:items-center" href="home">
               Home
             </a>
             <a
               className="flex flex-col px-6 py-1 md:flex-row md:items-center"
-              href="#"
+              href="sleep"
             >
               Sleep
             </a>
             <a
               className="flex flex-col px-6 py-1 md:flex-row md:items-center"
-              href="#"
+              href="meditation"
             >
               Meditation
             </a>
             <a
               className="flex flex-col px-6 py-1 md:flex-row md:items-center"
-              href="#"
+              href="profile"
             >
               Profile
             </a>
@@ -40,9 +40,9 @@ const Header = () => {
             <div>
               <a
                 className="flex flex-col rounded-full text-white border-4 border-white p-2 px-6 py-1 md:flex-row md:items-center"
-                href="#"
+                href="auth/login"
               >
-                Username
+                Logout
               </a>
             </div>
         </div>

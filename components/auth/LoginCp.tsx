@@ -80,7 +80,7 @@ export const LoginCp = () => {
               <button
                 type="submit"
                 className="flex mt-2 items-center justify-center focus:outline-none text-white text-sm sm:text-base bg-[#611295] hover:bg-[#46086E] rounded-2xl py-2 w-full transition duration-150 ease-in">
-                <span className="mr-2 uppercase">Log In</span>
+                <a href='home' className="mr-2 uppercase">Log In</a>
               </button>
             </div>
           </form>
