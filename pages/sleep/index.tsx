@@ -7,7 +7,7 @@ import Image from 'next/image'
 
 const index: NextPage = () => {
   return (
-    <div className=" relative min-h-screen min-w-screen overflow-auto bg-black">
+    <div className=" min-w-screen relative min-h-screen overflow-auto bg-black">
       <Header />
       <div className=" mt-24">
         <div className="flex flex-wrap  items-center justify-between px-2 md:px-0">
@@ -48,107 +48,107 @@ const index: NextPage = () => {
             }}
             className="flex  w-screen flex-col items-center justify-center bg-cover bg-center"
           >
-          <div className=" m-auto my-20 grid w-full rounded-lg bg-transparent p-10 text-center backdrop-blur-sm  md:grid-cols-2">
-            <img
-              className="m-auto rounded-lg"
-              src="/images/amethyst.jpg"
-              alt=""
-            />
-            <div className=" m-auto p-5  text-lg text-black md:ml-5 md:text-left">
-              <div className="mb-3 text-3xl font-semibold">
-                Why Choose Amethyst ?
+            <div className=" m-auto my-20 grid w-full rounded-lg bg-transparent p-10 text-center backdrop-blur-sm  md:grid-cols-2">
+              <img
+                className="m-auto rounded-lg"
+                src="/images/amethyst.jpg"
+                alt=""
+              />
+              <div className=" m-auto p-5  text-lg text-black md:ml-5 md:text-left">
+                <div className="mb-3 text-3xl font-semibold">
+                  Why Choose Amethyst ?
+                </div>
+                <div className="">
+                  Amethyst is a free intuitive meditation app that helps you
+                  find peace in your day to day life. Based on ancient wisdom
+                  and modern science, amethyst teaches real time breathing
+                  exercises and mindfulness exercises for you to use anytime,
+                  anywhere. With our simple but effective teaching style,
+                  meditation becomes effortless!
+                </div>
               </div>
+            </div>
+          </div>
+        </div>
+
+        <div className="bg-black my-10 text-center text-3xl font-semibold italic text-white">
+          Improve your sleep with our lessons
+          </div>
+          <div className="mx-auto grid bg-black text-gray-800 md:grid-cols-3 md:px-12">
+            <div className="m-5 mx-auto flex max-w-sm flex-col overflow-hidden rounded text-sm shadow-lg sm:mx-auto md:m-5">
               <div className="">
-                Amethyst is a free intuitive meditation app that helps you find
-                peace in your day to day life. Based on ancient wisdom and
-                modern science, amethyst teaches real time breathing exercises
-                and mindfulness exercises for you to use anytime, anywhere. With
-                our simple but effective teaching style, meditation becomes
-                effortless!
+                <img src="/images/forest.jpg" alt="forest" />
+              </div>
+              <div className="text p-5 pt-2 text-center">
+                <div className=" my-2 text-xl font-semibold text-white">
+                  Pepperoni
+                </div>
+                <div className="text-white">
+                  A classic. Just throw a few (or a ton of) slices of pepperoni
+                  on top of the cheese, and you'll soon have a greasy, slightly
+                  spicy and delicious pizza that you simply can't go wrong with.
+                </div>
+              </div>
+            </div>
+
+            <div className="m-5 mx-auto flex max-w-sm flex-col overflow-hidden rounded text-sm shadow-lg sm:mx-auto md:m-5">
+              <div className="">
+                <img src="/images/rocks.jpg" alt="forest" />
+              </div>
+              <div className="text p-5 pt-2 text-center">
+                <div className="title my-2 text-xl font-semibold text-white">
+                  Pepperoni
+                </div>
+                <div className="text-white">
+                  A classic. Just throw a few (or a ton of) slices of pepperoni
+                  on top of the cheese, and you'll soon have a greasy, slightly
+                  spicy and delicious pizza that you simply can't go wrong with.
+                </div>
+              </div>
+            </div>
+
+            <div className=" m-5 mx-auto flex max-w-sm flex-col overflow-hidden rounded text-sm shadow-lg sm:mx-auto md:m-5">
+              <div className="img">
+                <img src="/images/montains.jpg" alt="forest" />
+              </div>
+              <div className="text p-5 pt-2 text-center">
+                <div className="title my-2 text-xl font-semibold text-white">
+                  Pepperoni
+                </div>
+                <div className="text-white">
+                  A classic. Just throw a few (or a ton of) slices of pepperoni
+                  on top of the cheese, and you'll soon have a greasy, slightly
+                  spicy and delicious pizza that you simply can't go wrong with.
+                </div>
               </div>
             </div>
           </div>
-        </div>
-      </div>
 
-      <div className="bg-gray-200 pt-24 text-center text-3xl font-semibold italic text-gray-800">
-        Improve your sleep with our lessons
-      </div>
-
-      <div className="mx-auto grid border bg-gray-200 text-gray-800 md:grid-cols-3 md:px-12">
-        <div className="m-5 mx-auto flex max-w-sm flex-col overflow-hidden rounded text-sm shadow-lg sm:mx-auto md:m-5">
-          <div className="">
-            <img src="/images/forest.jpg" alt="forest" />
-          </div>
-          <div className="text p-5 pt-2 text-center">
-            <div className="title my-2 text-xl font-semibold text-red-700">
-              Pepperoni
+        <div className="section scree grid w-full border bg-gray-200 py-28 text-gray-800 md:grid-cols-2">
+          <div className="subsec my-auto p-8">
+            <div className="title mb-5 text-3xl font-semibold">
+              What is paleo pizza crust made out of?
             </div>
-            <div className="desc">
-              A classic. Just throw a few (or a ton of) slices of pepperoni on
-              top of the cheese, and you'll soon have a greasy, slightly spicy
-              and delicious pizza that you simply can't go wrong with.
+            <div className=" text-lg">
+              We've seen it all kinds of ways, with different types of flours,
+              but we settled on almond flour for its nutty flavor. We also mix
+              in spices—Italian seasoning and garlic powder—to give it more
+              flavor. We skip yeast because it can be a pain and instead
+              incorporate eggs and olive oil. The eggs help make the crust
+              fluffy.
             </div>
           </div>
-        </div>
-
-        <div className="card m-5 mx-auto flex max-w-sm flex-col overflow-hidden rounded text-sm shadow-lg sm:mx-auto md:m-5">
-          <div className="">
-            <img src="/images/montains.jpg" alt="forest" />
-          </div>
-          <div className="text p-5 pt-2 text-center">
-            <div className="title my-2 text-xl font-semibold text-red-700">
-              Pepperoni
-            </div>
-            <div className="desc">
-              A classic. Just throw a few (or a ton of) slices of pepperoni on
-              top of the cheese, and you'll soon have a greasy, slightly spicy
-              and delicious pizza that you simply can’t go wrong with.
-            </div>
-          </div>
-        </div>
-
-        <div className="card m-5 mx-auto flex max-w-sm flex-col overflow-hidden rounded text-sm shadow-lg sm:mx-auto md:m-5">
-          <div className="img">
+          <div className="subsec max-h-96 flex-none overflow-hidden">
+          <div>
           <img src="/images/montains.jpg" alt="forest" />
-          </div>
-          <div className="text p-5 pt-2 text-center">
-            <div className="title my-2 text-xl font-semibold text-red-700">
-              Pepperoni
-            </div>
-            <div className="desc">
-              A classic. Just throw a few (or a ton of) slices of pepperoni on
-              top of the cheese, and you'll soon have a greasy, slightly spicy
-              and delicious pizza that you simply can’t go wrong with.
-            </div>
-          </div>
-        </div>
-      </div>
 
-      <div className="section scree grid w-full border bg-gray-200 py-28 text-gray-800 md:grid-cols-2">
-        <div className="subsec max-h-96 flex-none overflow-hidden">
-          <video className="-mt-8 rounded-2xl" autoPlay loop muted />
-          <source
-            src="/images/pexels-ekaterina-bolovtsova-6768265.mp4"
-            type="video/mp4"
-          />
-        </div>
-        <div className="subsec my-auto p-8">
-          <div className="title mb-5 text-3xl font-semibold">
-            What is paleo pizza crust made out of?
           </div>
-          <div className="desc text-lg">
-            We've seen it all kinds of ways, with different types of flours, but
-            we settled on almond flour for its nutty flavor. We also mix in
-            spices—Italian seasoning and garlic powder—to give it more flavor.
-            We skip yeast because it can be a pain and instead incorporate eggs
-            and olive oil. The eggs help make the crust fluffy.
+            
           </div>
         </div>
+        <Footer />
+        {/* </div> */}
       </div>
-      <Footer />
-      {/* </div> */}
-    </div>
     </div>
   )
 }
