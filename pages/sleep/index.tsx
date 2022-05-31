@@ -24,38 +24,42 @@ const index: NextPage = () => {
               and improve your chances for a more restful night's sleep.
             </p>
             <div className="mr-24 flex items-center justify-center space-y-4 duration-500 ease-in-out hover:rotate-6 hover:scale-125">
-              <button className="mt-10 rounded-lg bg-white px-2 py-3 font-bold text-black shadow-lg shadow-purple-500">
+              <a
+                href="/#"
+                className="mt-10 rounded-lg bg-white px-2 py-3 font-bold text-black shadow-lg shadow-purple-500"
+              >
                 Get Started
-              </button>
+              </a>
             </div>
           </div>
         </div>
-        <div className="mb-10 mt-10 flex items-center justify-center space-y-4">
+        <div className="mb-10 mt-10 flex cursor-pointer items-center justify-center space-y-4">
           <div className="animate-pulse" title="Scroll to Next Section">
             <div className="h-7 w-4 animate-bounce rounded-lg border-2 border-white">
               <div className="mx-auto mt-1 h-3 w-1 rounded-xl border-2 border-white"></div>
             </div>
-            <span className="-ml-8  text-white duration-500 ease-in-out hover:rotate-6 hover:scale-125">
+            <span className="-ml-8 font-bold text-white ">
               Scroll Down
             </span>
           </div>
         </div>
 
-        <div className="flex w-screen overflow-hidden bg-white">
+        <div className="flex w-screen  overflow-hidden bg-white">
           <div
             style={{
-              backgroundImage: "url('/images/.png')",
+              backgroundImage: "url('/images/purple.jpg')",
             }}
-            className="flex  w-screen flex-col items-center justify-center bg-cover bg-center"
+            className="flex  w-screen flex-col items-center justify-center  bg-cover bg-center backdrop-blur-lg"
           >
-            <div className=" m-auto my-20 grid w-full rounded-lg bg-transparent p-10 text-center backdrop-blur-sm  md:grid-cols-2">
-              <img
-                className="m-auto rounded-lg"
-                src="/images/amethyst.jpg"
-                alt=""
-              />
-              <div className=" m-auto p-5  text-lg text-black md:ml-5 md:text-left">
-                <div className="mb-3 text-3xl font-semibold">
+            <div className=" m-auto my-20 grid w-full rounded-lg p-10 text-center backdrop-blur-lg md:grid-cols-2">
+              {/* <video
+              loop autoPlay
+                className="m-auto rounded-lg backdrop-blur-lg"
+                src="/images/87494-blop-violeta-loop.mp4"
+                
+              /> */}
+              <div className=" m-auto p-5 text-lg text-white  md:ml-5 md:text-left">
+                <div className="mb-3 text-3xl  font-semibold">
                   Why Choose Amethyst ?
                 </div>
                 <div className="">
@@ -71,79 +75,109 @@ const index: NextPage = () => {
           </div>
         </div>
 
-        <div className="bg-black my-10 text-center text-3xl font-semibold italic text-white">
+        <div className="my-10 bg-black text-center text-3xl font-semibold text-white">
           Improve your sleep with our lessons
-          </div>
-          <div className="mx-auto grid bg-black text-gray-800 md:grid-cols-3 md:px-12">
-            <div className="m-5 mx-auto flex max-w-sm flex-col overflow-hidden rounded text-sm shadow-lg sm:mx-auto md:m-5">
-              <div className="">
-                <img src="/images/forest.jpg" alt="forest" />
-              </div>
-              <div className="text p-5 pt-2 text-center">
-                <div className=" my-2 text-xl font-semibold text-white">
-                  Pepperoni
-                </div>
-                <div className="text-white">
-                  A classic. Just throw a few (or a ton of) slices of pepperoni
-                  on top of the cheese, and you'll soon have a greasy, slightly
-                  spicy and delicious pizza that you simply can't go wrong with.
-                </div>
-              </div>
+        </div>
+        <div className=" grid bg-black text-gray-800 md:grid-cols-3 md:px-12">
+          <div className="m-5 p-3 mx-auto flex max-w-sm flex-col overflow-hidden rounded text-sm shadow-lg sm:mx-auto md:m-5">
+            <div className="duration-500 ease-in-out hover:scale-125 rounded-xl">
+              <img src="/images/gemstones.jpg" alt="forest" className='rounded-xl'/>
             </div>
-
-            <div className="m-5 mx-auto flex max-w-sm flex-col overflow-hidden rounded text-sm shadow-lg sm:mx-auto md:m-5">
-              <div className="">
-                <img src="/images/rocks.jpg" alt="forest" />
+            <div className=" p-10 pt-2 text-center">
+              <div className=" my-2 text-xl font-semibold text-white">
+                Gemstones for meditation
               </div>
-              <div className="text p-5 pt-2 text-center">
-                <div className="title my-2 text-xl font-semibold text-white">
-                  Pepperoni
-                </div>
-                <div className="text-white">
-                  A classic. Just throw a few (or a ton of) slices of pepperoni
-                  on top of the cheese, and you'll soon have a greasy, slightly
-                  spicy and delicious pizza that you simply can't go wrong with.
-                </div>
+              <div className="text-white">
+                I would really recommend always setting an intention before your
+                meditation, especially when using crystals. This is because
+                knowing your intention helps you to choose crystals that will
+                help you align with that intention.
               </div>
-            </div>
-
-            <div className=" m-5 mx-auto flex max-w-sm flex-col overflow-hidden rounded text-sm shadow-lg sm:mx-auto md:m-5">
-              <div className="img">
-                <img src="/images/montains.jpg" alt="forest" />
-              </div>
-              <div className="text p-5 pt-2 text-center">
-                <div className="title my-2 text-xl font-semibold text-white">
-                  Pepperoni
-                </div>
-                <div className="text-white">
-                  A classic. Just throw a few (or a ton of) slices of pepperoni
-                  on top of the cheese, and you'll soon have a greasy, slightly
-                  spicy and delicious pizza that you simply can't go wrong with.
-                </div>
+              <div className="mr-24 flex items-center justify-center space-y-4 duration-500 ease-in-out  hover:scale-125">
+                <a
+                  href=""
+                  className="mt-10 ml-20 items-center rounded-lg bg-white px-10 py-3 text-sm font-bold text-black shadow-lg shadow-blue-700"
+                >
+                  Learn more
+                </a>
               </div>
             </div>
           </div>
 
-        <div className="section scree grid w-full border bg-gray-200 py-28 text-gray-800 md:grid-cols-2">
-          <div className="subsec my-auto p-8">
+          <div className="m-5 p-3 mx-auto flex max-w-sm flex-col overflow-hidden rounded text-sm shadow-lg sm:mx-auto md:m-5">
+            <div className="duration-500 ease-in-out hover:scale-125">
+              <img src="/images/1_WeiQDBan0S4ytur4ldeszQ.jpg" alt="rocks" className='rounded-xl' />
+            </div>
+            <div className="m-3 pt-2 text-center">
+              <div className="text-xl font-semibold text-white">
+                Breathing exercises
+              </div>
+              <div className="text-white">
+                Lie down, or sit straight but comfortably. Relax and put one
+                hand on your chest and one on your upper stomach. Watch the
+                movement of your hands Take a DEEP breath and watch the movement
+                of your hand.
+              </div>
+              <div className="mr-24 flex items-center justify-center space-y-4 duration-500 ease-in-out  hover:scale-125">
+                <a
+                  href=""
+                  className="mt-6 ml-20 items-center rounded-lg bg-white px-14 py-3 text-sm font-bold text-black shadow-lg shadow-blue-700"
+                >
+                  Learn more
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <div className="m-5 p-3 mx-auto flex max-w-sm flex-col overflow-hidden rounded text-sm shadow-lg sm:mx-auto md:m-5">
+            <div className="duration-500 ease-in-out hover:scale-125">
+              <img src="/images/sleep.jpg" alt="forest" className='rounded-xl' />
+            </div>
+            <div className="p-5 pt-2 text-center">
+              <div className="my-2 text-xl font-semibold text-white">
+                Bed time stories
+              </div>
+              <div className="text-white ">
+                Once your child is comfortable with the idea of meditation, you
+                can offer them tools to refine their own practice. Here are
+                three guided practices developed for kids. Feel free to join
+                your child in these meditations if it helps encourage focus.
+              </div>
+              <div className="mr-24 flex items-center justify-center space-y-4 duration-500 ease-in-out hover:scale-125">
+                <a
+                  href=""
+                  className="mt-10 ml-20 items-center rounded-lg  bg-white px-10 py-3 text-sm font-bold text-black shadow-lg shadow-blue-700"
+                >
+                  Learn more
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div className="grid w-full  bg-gray-100 py-20 text-gray-800 md:grid-cols-2">
+          <div className=" my-auto p-8">
             <div className="title mb-5 text-3xl font-semibold">
-              What is paleo pizza crust made out of?
+              Issues with sleep? Get Amethyst Premium
             </div>
             <div className=" text-lg">
-              We've seen it all kinds of ways, with different types of flours,
-              but we settled on almond flour for its nutty flavor. We also mix
-              in spices—Italian seasoning and garlic powder—to give it more
-              flavor. We skip yeast because it can be a pain and instead
-              incorporate eggs and olive oil. The eggs help make the crust
-              fluffy.
+              Play Sleepy Antiques and be transported into a quaint, rainy night
+              antique shop! This sleep-friendly app has everything you need to
+              become immersed in the story. Take a deep breath. Welcome to your
+              journey toward self-improvement. Meditation is more accessible
+              than you think. It’s still going to require some effort on your
+              part, but this is the start of something great.
+            </div>
+            <div className="mr-24 flex items-center justify-center space-y-4 duration-500 ease-in-out hover:rotate-6 hover:scale-125">
+              <button className="mt-10 rounded-lg bg-white px-2 py-3 font-bold text-black shadow-lg shadow-blue-700">
+                Amethyst Premium
+              </button>
             </div>
           </div>
-          <div className="subsec max-h-96 flex-none overflow-hidden">
-          <div>
-          <img src="/images/montains.jpg" alt="forest" />
-
-          </div>
-            
+          <div className=" mx-5 max-h-96 flex-none overflow-hidden rounded-lg">
+            <div>
+              <img src="/images/montains.jpg" alt="forest" />
+            </div>
           </div>
         </div>
         <Footer />

@@ -50,8 +50,8 @@ const LandingPage: NextPage = () => {
         </p>
         <div className="flex w-full justify-center rounded-2xl ">
           <div className="flex w-full max-w-[50%] flex-wrap justify-between p-4">
-            {cards?.map((e) => (
-              <div className="my-3 flex gap-1 items-center w-[45%] bg-white rounded-xl p-1">
+            {cards?.map((e, i) => (
+              <div key={i} className="my-3 flex gap-1 items-center w-[45%] bg-white rounded-xl p-1">
                 <div
                 className='bg-center bg-cover w-16 h-14'
                   style={{

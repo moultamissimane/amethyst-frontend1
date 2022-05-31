@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useRef } from 'react'
 import { NextPage } from 'next'
 import Header from '../../components/Header'
 import Lottie from '../../components/lottie'
@@ -6,12 +6,24 @@ import Lottie from '../../components/lottie'
 import Footer from '../../components/Footer'
 
 const home: NextPage = () => {
+  const testimonialsRef = useRef<any>(null)
+
+  const scrollMe = () => {
+    const element = testimonialsRef.current
+
+    element.scrollIntoView({
+      behavior: 'smooth',
+      block: 'start',
+      inline: 'nearest',
+    })
+  }
+
   return (
     <div className="relative flex min-h-screen min-w-full items-center justify-center overflow-auto bg-black">
       <Header />
       <div className="m-auto">
         <div className="mt-24 flex flex-wrap items-center justify-between px-2 md:px-0">
-          <div className="-mt-5 lg:w-6/12 lg:py-24 xl:py-32 ">
+          <div className="-mt-10 lg:w-6/12 lg:py-24 xl:py-32 ">
             <Lottie />
           </div>
           <div className="w-full lg:w-6/12">
@@ -28,12 +40,15 @@ const home: NextPage = () => {
             </div>
           </div>
         </div>
-        <div className="flex items-end justify-center space-y-4">
+        <div
+          onClick={scrollMe}
+          className="mb-10 mt-10 flex cursor-pointer items-center justify-center space-y-4"
+        >
           <div className="animate-pulse" title="Scroll to Next Section">
             <div className="h-7 w-4 animate-bounce rounded-lg border-2 border-white">
               <div className="mx-auto mt-1 h-3 w-1 rounded-xl border-2 border-white"></div>
             </div>
-            <span className="-ml-8 mb-20 text-white">Scroll Down</span>
+            <span className="-ml-8 font-bold text-white ">Scroll Down</span>
           </div>
         </div>
 
@@ -51,35 +66,29 @@ const home: NextPage = () => {
               tone of any session.
             </p>
           </div>
-          {/* <div className=""> */}
-            {/* <div className=""> */}
-            <div className='w-3/4 flex-row-reverse'>
-              <video className="rounded-2xl" autoPlay loop muted>
-                <source
-                  src="/images/Caaandle.mp4"
-                  type="video/mp4"
-                />
-              </video>
-            </div>
+          <div className="w-3/4 flex-row-reverse">
+            <video className="my-5 rounded-2xl" autoPlay loop muted>
+              <source src="/images/Caaandle.mp4" type="video/mp4" />
+            </video>
+          </div>
         </div>
 
-        <div className="mt-10 flex justify-between gap-3  bg-black p-4 lg:grid-cols-2 ">
-            <div className="w-3/4">
-              <video className="-mt-8 rounded-2xl" autoPlay loop muted>
-                <source
-                  src="/images/pexels-ekaterina-bolovtsova-6768265.mp4"
-                  type="video/mp4"
-                />
-              </video>
-            </div>
-          
+        <div className="flex justify-between gap-3  bg-black p-4 lg:grid-cols-2 ">
+          <div className="w-3/4">
+            <video className="my-5 rounded-2xl" autoPlay loop muted>
+              <source src="/images/beach.mp4" type="video/mp4" />
+            </video>
+          </div>
+
           <div className="mx-7">
             <h1 className="mt-10 text-4xl font-bold text-white">
               Discover the best sounds to help you sleep
             </h1>
             <p className="mt-10 text-lg text-slate-100">
-            Discover the best sounds for you to help you fall <br /> asleep easier, faster, and more soundly. 
-            Our sleep timer will automatically shut down the sound after a specified period of time has elapsed.
+              Discover the best sounds for you to help you fall <br /> asleep
+              easier, faster, and more soundly. Our sleep timer will
+              automatically shut down the sound after a specified period of time
+              has elapsed.
             </p>
           </div>
           <div className="relative overflow-hidden rounded-xl">
@@ -90,20 +99,23 @@ const home: NextPage = () => {
         </div>
         <div className="bg-white p-10">
           <div className="mx-auto  max-w-xl text-center">
-            <h1 className=" text-4xl font-bold text-black ">
+            <h1
+              ref={testimonialsRef}
+              className=" text-4xl font-bold text-black "
+            >
               Testimonials
             </h1>
           </div>
-          <div className="text-center mb-10">
-                    <span className="inline-block w-1 h-1 rounded-full bg-[#703698] ml-1"></span>
-                    <span className="inline-block w-3 h-1 rounded-full bg-[#703698] ml-1"></span>
-                    <span className="inline-block w-40 h-1 rounded-full bg-[#703698] ml-1"></span>
-                    <span className="inline-block w-3 h-1 rounded-full bg-[#703698] ml-1"></span>
-                    <span className="inline-block w-1 h-1 rounded-full bg-[#703698] ml-1"></span>
-                </div>
+          <div className="mb-10 text-center">
+            <span className="ml-1 inline-block h-1 w-1 rounded-full bg-[#703698]"></span>
+            <span className="ml-1 inline-block h-1 w-3 rounded-full bg-[#703698]"></span>
+            <span className="ml-1 inline-block h-1 w-40 rounded-full bg-[#703698]"></span>
+            <span className="ml-1 inline-block h-1 w-3 rounded-full bg-[#703698]"></span>
+            <span className="ml-1 inline-block h-1 w-1 rounded-full bg-[#703698]"></span>
+          </div>
           <div className="-mx-3 mt-10 items-start md:flex">
             <div className="px-3 md:w-1/3">
-              <div className="mx-auto mb-6 w-full rounded-lg border-4 border-[#703698] shadow-md shadow-[#703698] bg-white p-5 font-light text-gray-800">
+              <div className="mx-auto mb-6 w-full rounded-lg border-4 border-[#703698] bg-white p-5 font-light text-gray-800 shadow-md shadow-[#703698]">
                 <div className="mb-4 flex w-full items-center">
                   <div className="h-10 w-10 overflow-hidden rounded-full border border-gray-200 bg-gray-50">
                     <img src="https://i.pravatar.cc/100?img=1" alt="" />
@@ -129,7 +141,7 @@ const home: NextPage = () => {
                   </p>
                 </div>
               </div>
-              <div className="mx-auto mb-6 w-full rounded-lg border-4 border-[#703698] shadow-md shadow-[#703698] bg-white p-5 font-light text-gray-800">
+              <div className="mx-auto mb-6 w-full rounded-lg border-4 border-[#703698] bg-white p-5 font-light text-gray-800 shadow-md shadow-[#703698]">
                 <div className="mb-4 flex w-full items-center">
                   <div className="h-10 w-10 overflow-hidden rounded-full border border-gray-200 bg-gray-50">
                     <img src="https://i.pravatar.cc/100?img=2" alt="" />
@@ -156,7 +168,7 @@ const home: NextPage = () => {
               </div>
             </div>
             <div className="px-3 md:w-1/3">
-              <div className="mx-auto mb-6 w-full rounded-lg border-4 border-[#703698] shadow-md shadow-[#703698] bg-white p-5 font-light text-gray-800">
+              <div className="mx-auto mb-6 w-full rounded-lg border-4 border-[#703698] bg-white p-5 font-light text-gray-800 shadow-md shadow-[#703698]">
                 <div className="mb-4 flex w-full items-center">
                   <div className="h-10 w-10 overflow-hidden rounded-full border border-gray-200 bg-gray-50">
                     <img src="https://i.pravatar.cc/100?img=3" alt="" />
@@ -180,7 +192,7 @@ const home: NextPage = () => {
                   </p>
                 </div>
               </div>
-              <div className="mx-auto mb-6 w-full rounded-lg border-4 border-[#703698] shadow-md shadow-[#703698] bg-white p-5 font-light text-gray-800">
+              <div className="mx-auto mb-6 w-full rounded-lg border-4 border-[#703698] bg-white p-5 font-light text-gray-800 shadow-md shadow-[#703698]">
                 <div className="mb-4 flex w-full items-center">
                   <div className="h-10 w-10 overflow-hidden rounded-full border border-gray-200 bg-gray-50">
                     <img src="https://i.pravatar.cc/100?img=4" alt="" />
@@ -208,7 +220,7 @@ const home: NextPage = () => {
               </div>
             </div>
             <div className="px-3 md:w-1/3">
-              <div className="mx-auto mb-6 w-full rounded-lg border-4 border-[#703698] shadow-md shadow-[#703698] bg-white p-5 font-light text-gray-800">
+              <div className="mx-auto mb-6 w-full rounded-lg border-4 border-[#703698] bg-white p-5 font-light text-gray-800 shadow-md shadow-[#703698]">
                 <div className="mb-4 flex w-full items-center">
                   <div className="h-10 w-10 overflow-hidden rounded-full border border-gray-200 bg-gray-50">
                     <img src="https://i.pravatar.cc/100?img=5" alt="" />
@@ -235,7 +247,7 @@ const home: NextPage = () => {
                   </p>
                 </div>
               </div>
-              <div className="mx-auto mb-6 w-full rounded-lg border-4 border-[#703698] shadow-md shadow-[#703698] bg-white p-5 font-light text-gray-800">
+              <div className="mx-auto mb-6 w-full rounded-lg border-4 border-[#703698] bg-white p-5 font-light text-gray-800 shadow-md shadow-[#703698]">
                 <div className="mb-4 flex w-full items-center">
                   <div className="h-10 w-10 overflow-hidden rounded-full border border-gray-200 bg-gray-50">
                     <img src="https://i.pravatar.cc/100?img=6" alt="" />
