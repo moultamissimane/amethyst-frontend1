@@ -90,10 +90,8 @@ const LandingPage: NextPage = () => {
         </div>
         <Link href="/">
           <button
-          
             onClick={(e) => handleClick(e, '/landingPages/CustomizeYourApp')}
             className="mt-6 flex w-36 justify-center rounded-lg bg-white from-purple-800 to-violet-700 p-2 text-xl font-bold text-black hover:bg-gradient-to-r hover:text-white"
-            
           >
             Continue
           </button>

@@ -18,28 +18,28 @@ const index: NextPage = () => {
 
   const cards = [
     {
-      image: '/images/ClearQUARTZ.png',
-      title: 'Reduce stress and anxiety',
+      image: '/images/ClearQuartz.png',
+      title: 'Clear Quartz',
     },
     {
-      image: '/images/lifeSituation.png',
-      title: 'Reduce stress and anxiety',
+      image: '/images/amethyst400.png',
+      title: 'Amethyst',
     },
     {
-      image: '/images/focus.png',
-      title: 'Reduce stress and anxiety',
+      image: '/images/rose-quartz-png-5-Transparent-Images.png',
+      title: 'Rose Quartz',
     },
     {
-      image: '/images/success.png',
-      title: 'Reduce stress and anxiety',
+      image: '/images/slinite-quartz.png',
+      title: 'Selenite',
     },
     {
-      image: '/images/sleep.png',
-      title: 'Reduce stress and anxiety',
+      image: '/images/tourmaline.png',
+      title: 'Black Tourmaline',
     },
     {
-      image: '/images/happy.png',
-      title: 'Reduce stress and anxiety',
+      image: '/images/blackQuartz.png',
+      title: 'Smokey Quartz',
     },
   ]
 
@@ -80,9 +80,9 @@ const index: NextPage = () => {
           Improve your sleep with our lessons
           <div className=" grid bg-black text-gray-800 md:grid-cols-3 md:px-12">
             {cards?.map((e, i) => (
-              <div key={i} className="m-5 mx-auto flex  max-w-sm flex-col overflow-hidden rounded p-3 text-sm shadow-lg sm:mx-auto md:m-5">
-                <div className="rounded-xl duration-500 ease-in-out hover:scale-125">
-                 <img src="{`$(e.image)`}" alt="" />
+              <div key={i} className="m-5 mx-auto flex justify-center items-center max-w-sm flex-col overflow-hidden rounded p-3 text-sm shadow-lg sm:mx-auto md:m-5">
+                <div className="cursor-pointer w-56 ">
+                 <img src={(e.image)} alt="" />
                 </div>
                 <div className=" p-10 pt-2 text-center text-white">
                   <div className=" my-2 text-xl font-semibold ">{e.title}</div>
@@ -90,64 +90,6 @@ const index: NextPage = () => {
               </div>
             ))}
 
-            {/* <div className="m-5 mx-auto flex max-w-sm flex-col overflow-hidden rounded p-3 text-sm shadow-lg sm:mx-auto md:m-5">
-              <div className="duration-500 ease-in-out hover:scale-125">
-                <img
-                  src="/images/1_WeiQDBan0S4ytur4ldeszQ.jpg"
-                  alt="rocks"
-                  className="rounded-xl"
-                />
-              </div>
-              <div className="m-3 pt-2 text-center">
-                <div className="text-xl font-semibold text-white">
-                  Breathing exercises
-                </div>
-                <div className="text-white">
-                  Lie down, or sit straight but comfortably. Relax and put one
-                  hand on your chest and one on your upper stomach. Watch the
-                  movement of your hands Take a DEEP breath and watch the
-                  movement of your hand.
-                </div>
-                <div className="mr-24 flex items-center justify-center space-y-4 duration-500 ease-in-out  hover:scale-125">
-                  <a
-                    href=""
-                    className="mt-6 ml-20 items-center rounded-lg bg-white px-14 py-3 text-sm font-bold text-black shadow-lg shadow-blue-700"
-                  >
-                    Learn more
-                  </a>
-                </div>
-              </div>
-            </div> */}
-
-            {/* <div className="m-5 mx-auto flex max-w-sm flex-col overflow-hidden rounded p-3 text-sm shadow-lg sm:mx-auto md:m-5">
-              <div className="duration-500 ease-in-out hover:scale-125">
-                <img
-                  src="/images/sleep.jpg"
-                  alt="forest"
-                  className="rounded-xl"
-                />
-              </div>
-              <div className="p-5 pt-2 text-center">
-                <div className="my-2 text-xl font-semibold text-white">
-                  Bed time stories
-                </div>
-                <div className="text-white ">
-                  Once your child is comfortable with the idea of meditation,
-                  you can offer them tools to refine their own practice. Here
-                  are three guided practices developed for kids. Feel free to
-                  join your child in these meditations if it helps encourage
-                  focus.
-                </div>
-                <div className="mr-24 flex items-center justify-center space-y-4 duration-500 ease-in-out hover:scale-125">
-                  <a
-                    href=""
-                    className="mt-10 ml-20 items-center rounded-lg  bg-white px-10 py-3 text-sm font-bold text-black shadow-lg shadow-blue-700"
-                  >
-                    Learn more
-                  </a>
-                </div>
-              </div>
-            </div> */}
           </div>
         </div>
 
