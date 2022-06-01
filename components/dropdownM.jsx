@@ -84,7 +84,7 @@ const Dropdown = ({ color }) => {
               </Link>
 
               <div className="h-0 my-2 border border-solid border-t-0 border-slate-800 opacity-25" />
-              <Link href="/auth/login" passHref>
+              <Link href="/landingPages" passHref>
               <div
                 className={
                   "text-sm py-2 px-4 cursor-pointer font-bold block w-full whitespace-nowrap bg-transparent " +

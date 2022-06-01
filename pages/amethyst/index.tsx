@@ -82,12 +82,7 @@ const index: NextPage = () => {
             {cards?.map((e, i) => (
               <div key={i} className="m-5 mx-auto flex  max-w-sm flex-col overflow-hidden rounded p-3 text-sm shadow-lg sm:mx-auto md:m-5">
                 <div className="rounded-xl duration-500 ease-in-out hover:scale-125">
-                  <div
-                    style={{
-                      backgroundImage: `url('${e.image}')`,
-                    }}
-                    className="rounded-xl"
-                  />
+                 <img src="{`$(e.image)`}" alt="" />
                 </div>
                 <div className=" p-10 pt-2 text-center text-white">
                   <div className=" my-2 text-xl font-semibold ">{e.title}</div>

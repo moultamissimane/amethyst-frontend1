@@ -1,6 +1,6 @@
 import React from 'react'
 import { NextPage } from 'next'
-import Header from '../../components/Header'  
+import Header from '../../components/Header'
 import LottieMoon from '../../components/LottieMoon'
 import Footer from '../../components/Footer'
 import Image from 'next/image'
@@ -38,117 +38,16 @@ const index: NextPage = () => {
             <div className="h-7 w-4 animate-bounce rounded-lg border-2 border-white">
               <div className="mx-auto mt-1 h-3 w-1 rounded-xl border-2 border-white"></div>
             </div>
-            <span className="-ml-8 font-bold text-white ">
-              Scroll Down
-            </span>
+            <span className="-ml-8 font-bold text-white ">Scroll Down</span>
           </div>
         </div>
 
-        <div className="flex w-screen  overflow-hidden bg-white">
-          <div
-            style={{
-              backgroundImage: "url('/images/violet.jpg')",
-            }}
-            className="flex  w-screen flex-col items-center backdrop-blur-lg  justify-center bg-cover bg-center"
-          >
-            <div className=" m-auto my-20 grid w-full rounded-lg p-10 backdrop-blur-lg text-center md:grid-cols-2">
-              {/* <video
-              loop autoPlay
-                className="m-auto rounded-lg backdrop-blur-lg"
-                src="/images/87494-blop-violeta-loop.mp4"
-                
-              /> */}
-              <div className=" m-auto p-5 text-lg text-white  md:ml-5 md:text-left">
-                <div className="mb-3 text-3xl  font-semibold">
-                  Why Choose Amethyst ?
-                </div>
-                <div className="">
-                  Amethyst is a free intuitive meditation app that helps you
-                  find peace in your day to day life. Based on ancient wisdom
-                  and modern science, amethyst teaches real time breathing
-                  exercises and mindfulness exercises for you to use anytime,
-                  anywhere. With our simple but effective teaching style,
-                  meditation becomes effortless!
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <div className="my-10 bg-black text-center text-3xl font-semibold italic text-white">
-          Improve your sleep with our lessons
-        </div>
-        <div className=" grid bg-black text-gray-800 md:grid-cols-3 md:px-12">
-          <div className="m-5 mx-auto flex max-w-sm flex-col overflow-hidden rounded text-sm shadow-lg sm:mx-auto md:m-5">
-            <div className="duration-500 ease-in-out hover:scale-125">
-              <img src="/images/forest.jpg" alt="forest" />
-            </div>
-            <div className=" p-5 pt-2 text-center">
-              <div className=" my-2 text-xl font-semibold text-white">
-                Pepperoni
-              </div>
-              <div className="text-white">
-                A classic. Just throw a few (or a ton of) slices of pepperoni on
-                top of the cheese, and you'll soon have a greasy, slightly spicy
-                and delicious pizza that you simply can't go wrong with.
-              </div>
-              <div className="mr-24 flex items-center justify-center space-y-4 duration-500 ease-in-out  hover:scale-125">
-                <a href='' className="mt-10 ml-20 rounded-lg text-md items-center bg-white px-10 py-3 font-bold text-black shadow-lg shadow-blue-700">
-                  Learn more
-                </a>
-              </div>
-            </div>
-          </div>
-
-          <div className="m-5 mx-auto flex max-w-sm flex-col overflow-hidden rounded text-sm shadow-lg sm:mx-auto md:m-5">
-            <div className="duration-500 ease-in-out hover:scale-125">
-              <img src="/images/rocks.jpg" alt="rocks" />
-            </div>
-            <div className="text p-5 pt-2 text-center">
-              <div className="title my-2 text-xl font-semibold text-white">
-                Pepperoni
-              </div>
-              <div className="text-white">
-                A classic. Just throw a few (or a ton of) slices of pepperoni on
-                top of the cheese, and you'll soon have a greasy, slightly spicy
-                and delicious pizza that you simply can't go wrong with.
-              </div>
-              <div className="mr-24 flex items-center justify-center space-y-4 duration-500 ease-in-out  hover:scale-125">
-                <a href='' className="mt-10 ml-20 rounded-lg text-md items-center bg-white px-10 py-3 font-bold text-black shadow-lg shadow-blue-700">
-                  Learn more
-                </a>
-              </div>
-            </div>
-          </div>
-
-          <div className=" m-5 mx-auto flex max-w-sm flex-col overflow-hidden rounded text-sm shadow-lg sm:mx-auto md:m-5">
-            <div className="duration-500 ease-in-out hover:scale-125">
-              <img src="/images/montains.jpg" alt="forest" />
-            </div>
-            <div className="text p-5 pt-2 text-center">
-              <div className="title my-2 text-xl font-semibold text-white">
-                Pepperoni
-              </div>
-              <div className="text-white ">
-                A classic. Just throw a few (or a ton of) slices of pepperoni on
-                top of the cheese, and you'll soon have a greasy, slightly spicy
-                and delicious pizza that you simply can't go wrong with.
-              </div>
-              <div className="mr-24 flex items-center justify-center space-y-4 duration-500 ease-in-out hover:scale-125">
-                <a href='' className="mt-10 ml-20 rounded-lg text-md  items-center bg-white px-10 py-3 font-bold text-black shadow-lg shadow-blue-700">
-                  Learn more
-                </a>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <div className="grid w-full  bg-gray-100 py-20 text-gray-800 md:grid-cols-2">
+        <div className="container ml-32 grid w-full bg-black py-20 text-white md:grid-cols-2">
           <div className=" my-auto p-8">
-            <div className="title mb-5 text-3xl font-semibold">
+            <div className=" mb-5 text-3xl font-semibold">
               Want to know about meditation for kids?
             </div>
-            <div className=" text-lg">
+            <div className=" mb-7 text-lg">
               Teaching mindfulness to kids can help shape three critical skills
               developed in early childhood: paying attention and remembering
               information, shifting back and forth between tasks, and behaving
@@ -157,15 +56,173 @@ const index: NextPage = () => {
               planning, reasoning, problem-solving, and positive social
               relationships.
             </div>
-            <div className="mr-24 flex items-center justify-center space-y-4 duration-500 ease-in-out hover:rotate-6 hover:scale-125">
-              <button className="mt-10 rounded-lg bg-white px-2 py-3 font-bold text-black shadow-lg shadow-blue-700">
-                Meditation for kids
-              </button>
+            <div className=" mb-5 text-3xl font-semibold">
+              Guided Mindfulness Meditation for Kids
+            </div>
+            <div className=" text-lg">
+              Once your child is comfortable with the idea of meditation, you
+              can offer them tools to refine their own practice. Here are three
+              guided practices developed for kids. Feel free to join your child
+              in these meditations if it helps encourage focus.
+              <br />
+              <span className="text-lg text-purple-400">1. </span>
+              <span className="text-lg font-bold underline ">
+                Lie down somewhere comfortable.
+              </span>
+              Let your arms and legs fall to the ground. Close your eyes gently.
+              <br />
+              <span className="text-lg text-purple-400">2. </span>
+              <span className="text-lg font-bold underline">
+                Start to notice how your body changes with each breath you take.
+              </span>
+              Each time you breathe, your belly moves up, and your belly moves
+              down. If it is easier, put a hand on your belly. Or if you want,
+              put a stuffed animal there.
+              <br />
+              <span className="text-lg text-purple-400">3. </span>
+              <span className="text-lg font-bold underline">
+                Each time you breathe, your belly moves.
+              </span>
+              Your hand, or your toy, rises, and then falls. See if you can
+              count ten breaths that way. Breathing in, one, breathing out, one.
+              <br />
+              <span className="text-lg text-purple-400">4. </span>
+              <span className="text-lg font-bold underline">
+                When you lose count, don't worry about it.
+              </span>
+              That's normal, and happens to everyone. Come back to whatever
+              number you last remember.
+              <br />
+              <span className="text-lg text-purple-400">5. </span>
+              <span className="text-lg font-bold underline">
+                Now, shift your attention to your day.
+              </span>
+              Breathing in, focus on your breath as your belly goes up.
+              Breathing out, focus on something that went well today.
+              <br />
+              <span className="text-lg text-purple-400">6. </span>
+              <span className="text-lg font-bold underline">
+                With each breath:
+              </span>
+              breathing in, noticing your belly move, and with each breath out,
+              noticing something that went well today.
+              <br />
+              <span className="text-lg text-violet-400">7. </span>
+              <span className="text-lg font-bold underline">
+                Now, picture something about yourself that makes you proud.
+              </span>
+              Breathing in, focus on your belly moving. Breathing out, picture
+              something that makes you proud of yourself. If nothing comes to
+              mind, that sometimes happens. If that's how you feel, picture what
+              you'd wish for yourself instead.
+              <br />
+              <span className="text-lg text-violet-400">8. </span>
+              <span className="text-lg font-bold underline">
+                Finally, bring someone to mind who makes you happy.
+              </span>
+              Before we end, try one more practice. Breathing in, notice your
+              belly move. And now, breathing out, picture someone who makes you
+              happy.
+              <br />
+              <span className="text-lg text-violet-400">9. </span>
+              <span className="text-lg font-bold underline">
+                As you come to the end of this practice,
+              </span>
+              take a few deep breaths, and start to wiggle your arms and legs.
+              Pause and decide what you'd like to do next.
+              <br />
+              <span className="text-lg text-purple-400">10. </span>
+              <span className="text-lg font-bold underline">
+                It's normal to have thoughts that make us feel scared or bad.
+              </span>
+              We should never ignore anything important, but it's useful to
+              focus on the rest of our lives too. Take a few minutes every day
+              to notice what has gone well, and see what happens next.
             </div>
           </div>
           <div className=" mx-5 max-h-96 flex-none overflow-hidden rounded-lg">
             <div>
-              <img src="/images/montains.jpg" alt="forest" />
+              <img src="/images/Screenshot8.png" alt="forest" />
+            </div>
+          </div>
+        </div>
+
+        <div className="container ml-32 grid w-full py-20 text-white md:grid-cols-2">
+          <div className=" mx-5 max-h-96 flex-none overflow-hidden rounded-lg">
+            <div>
+              <img src="/images/Screenshot6.png" alt="forest" />
+            </div>
+          </div>
+          <div className=" my-auto p-8">
+            <div className=" mb-5 text-3xl font-semibold">
+              5 Things Mindful Families Do Differently
+            </div>
+            <div className=" text-lg">
+              <span className="text-xl text-purple-400">1. </span>
+              <span className="text-xl font-bold underline">
+                Embrace Imperfection
+              </span>
+              <br />
+              You are going to make mistakes, you are going to hurt your
+              children's feelings, and you are not going to be able to show up
+              in all the ways you want to or the ways your children want you to,
+              but none of that makes you a bad parent—it only makes you a human
+              one. When you can move into a place of acceptance of this you are
+              able to shift into a greater ease and grace within yourself.
+              <br />
+              <span className="text-xl text-purple-400">2. </span>
+              <span className="text-xl font-bold underline">
+                Listen with Curiosity
+              </span>
+              <br />
+              When we pause and listen to each other more in our lives, we can
+              engage the experiences in our family with a growth mindset. We can
+              see the struggles and triumphs as opportunities for learning and
+              growth. Instead of judging each other, we can get better at
+              recognizing when we don't understand where the other person is
+              coming from, lean in with curiosity and say, “tell me more.” Or we
+              might try and stand in their shoes to understand their perspective
+              by asking ourselves, “why might they be acting this way?”
+              <br />
+              <span className="text-xl text-purple-400">3. </span>
+              <span className="text-xl font-bold underline">
+                Communicate Courageously
+              </span>
+              <br />
+              Being clear and honest with each other about what you need and how
+              you feel is ultimately an act of kindness that creates trust and
+              connection. This means showing up with our partners and kids with
+              an open heart and an open mind. It builds on listening with
+              curiosity and creates space for everyone to feel comfortable to
+              share how they feel and what they need.
+              <br />
+              <span className="text-xl text-purple-400">4. </span>
+              <span className="text-xl font-bold underline">
+                Practice Appreciation and Gratitude
+              </span>
+              <br />
+              While words of affirmation may or may not be your primary love
+              language, we all want to be seen and appreciated and there's a
+              surprisingly simple way of doing this that can have huge
+              benefits—intentionally practicing being appreciative and
+              expressing gratitude to one another. By taking the time to
+              acknowledge our kids or our partner when they empty the dishwasher
+              or are ready on time, we can shift the culture of the household
+              from demanding and frustrated to cooperative and grateful.
+              <br />
+              <span className="text-xl text-purple-400">5. </span>
+              <span className="text-xl font-bold underline">
+                Remember to Play and Have Fun
+              </span>
+              <br />
+              It seems silly to say that any of us would forget to have fun and
+              enjoy each other but it's more common than you think. Raising
+              children is probably the most important job you will ever be
+              tasked with and the pressure of raising good humans can be
+              weighty. So much so that we can fall into a pattern of taking
+              things too seriously and being overly * focused on tasks (chores,
+              homework, activities, etc.) that we lose the enjoyment of being
+              together.
             </div>
           </div>
         </div>
@@ -175,6 +232,5 @@ const index: NextPage = () => {
     </div>
   )
 }
-
 
 export default index
