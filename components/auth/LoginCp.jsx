@@ -1,6 +1,80 @@
 import React from 'react'
 
 export const LoginCp = () => {
+	const [inputs, setInputs] = useState({})
+    const navigate = useNavigate()
+
+    const [snackBarMessage, setSnackBarMessage] = useState('')
+    const [snackBarOpen, setSnackBarOpen] = useState(false)
+
+    const handleChange = (event) => {
+        const name = event.target.name;
+        const value = event.target.value;
+        setInputs(values => ({
+            ...values,
+            [name]: value
+        }))
+    }
+
+    useEffect(async () => {
+        let user = await getUser()
+        let token = getToken()
+        if (user) {
+            console.log(user, token)
+        }
+    }, [])
+
+    const handleClose = () => {
+        setSnackBarOpen(false)
+    }
+
+    const handleSubmit = (event) => {
+        event.preventDefault();
+        console.log(inputs)
+        setIsLoading(true)
+        axios.post('http://localhost/app_api/user/login', inputs)
+            .then(res => {
+                console.log(res.data.Token)
+                setIsLoading(false)
+                localStorage.setItem('token', res.data.Token)
+                localStorage.setItem('user', JSON.stringify(res.data.User))
+                if (res.data.Token) {
+                    setSnackBarMessage('Login Successful 🎉')
+                    setSnackBarOpen(true)
+                    setTimeout(() => {
+                        navigate('/home')
+                    }, 1000)
+                }
+                else {
+                    setSnackBarMessage('Login Failed 😢💔')
+                    setSnackBarOpen(true)
+                }
+            }
+            )
+    }
+    const logout = () => {
+        localStorage.removeItem('token');
+        setIsLoggedin(false);
+      };
+
+    const [isLoading, setIsLoading] = useState(false)
+
+    const action = (
+        <>
+            <IconButton
+                size="small"
+                aria-label="close"
+                color="inherit"
+                onClick={handleClose}
+            >
+                <CloseIcon fontSize="small" />
+            </IconButton>
+        </>
+    );
+
+
+
+
 	return (
 
 		<div className="min-h-screen bg-no-repeat bg-cover bg-center"

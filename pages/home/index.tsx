@@ -2,8 +2,9 @@ import React, { useRef } from 'react'
 import { NextPage } from 'next'
 import Header from '../../components/Header'
 import Lottie from '../../components/lottie'
-// import { Carousel } from '../../components/Carousel'
 import Footer from '../../components/Footer'
+import Link from 'next/link'
+
 
 const home: NextPage = () => {
   const testimonialsRef = useRef<any>(null)
@@ -34,9 +35,11 @@ const home: NextPage = () => {
               anxiety and much more.
             </p>
             <div className="mr-24  flex items-center justify-center space-y-4">
+              <Link href="../meditation/playlist" passHref> 
               <button className="mt-10 rounded-lg bg-white px-2 py-3 font-bold text-black shadow-lg shadow-purple-500">
                 Get Started
               </button>
+              </Link>
             </div>
           </div>
         </div>

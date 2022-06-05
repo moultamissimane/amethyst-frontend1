@@ -11,6 +11,7 @@
     "@mui/icons-material": "^5.8.0",
     "@next-core/dev-dependencies": "^1.12.210",
     "@popperjs/core": "2.9.1",
+    "axios": "^0.27.2",
     "framer-motion": "^6.3.4",
     "howler": "^2.2.3",
     "lottie-web": "^5.9.4",

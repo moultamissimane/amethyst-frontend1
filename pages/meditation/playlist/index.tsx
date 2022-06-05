@@ -1,7 +1,7 @@
 import React, { useRef } from 'react'
 import { NextPage } from 'next'
-import Header from '../../components/Header'
-import Footer from '../../components/Footer'
+import Header from '../../../components/Header'
+import Footer from '../../../components/Footer'
 import Link from 'next/link'
 
 
@@ -90,16 +90,16 @@ const index: NextPage = () => {
         </div>
 
         <div className="my-10 bg-black text-center text-3xl font-semibold text-white">
-          6 Gemstones for a deeply meditation session
+          Dive into thousands of playlists created by Amethyst
           <div className="grid bg-black text-gray-800 md:grid-cols-3 md:px-12">
             {cards?.map((e, i) => (
               <div key={i} className="m-5 mx-auto flex justify-center items-center max-w-sm flex-col overflow-hidden rounded p-3 text-sm shadow-lg sm:mx-auto md:m-5">
-                  <Link href={`/articles/${e?.link}` || "#"}>
+                  {/* <Link href={`/articles/${e?.link}` || "#"}> */}
                 <div className="cursor-pointer w-56">
 
                  <img src={(e.image)} alt="" />
                 </div>
-                  </Link>
+                  {/* </Link> */}
                 <div className=" p-10 pt-2 text-center text-white">
                   <div className=" my-2 text-xl font-semibold ">{e.title}</div>
                 </div>
