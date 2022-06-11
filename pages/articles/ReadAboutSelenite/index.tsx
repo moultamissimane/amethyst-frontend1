@@ -81,14 +81,14 @@ const index: NextPage = () => {
             </div>
           </div>
           <div className=" mx-5 max-h-96 flex-none overflow-hidden rounded-lg">
-            <div className="">
+            <div className="mx-5 max-h-96 flex-none overflow-hidden rounded-lg">
               <img src="/images/seleniteQuote.jpg" alt="Selenite" />
             </div>
           </div>
         </div>
 
         <div className="container ml-32 grid w-full py-20 text-white md:grid-cols-2">
-          <div className="mx-5 max-h-96  overflow-hidden rounded-lg">
+          <div className="mx-5 max-h-96 overflow-hidden rounded-lg">
             <div>
               <img src="/images/allGems.jpg" alt="All gems" />
             </div>

@@ -4,6 +4,7 @@ import Header from '../../components/Header'
 import Meditation from '../../components/Meditation'
 import Footer from '../../components/Footer'
 import Image from 'next/image'
+import Link from 'next/link'
 
 const index: NextPage = () => {
   return (
@@ -36,9 +37,7 @@ const index: NextPage = () => {
             <div className="h-7 w-4 animate-bounce rounded-lg border-2 border-white">
               <div className="mx-auto mt-1 h-3 w-1 rounded-xl border-2 border-white"></div>
             </div>
-            <span className="-ml-8 font-bold text-white ">
-              Scroll Down
-            </span>
+            <span className="-ml-8 font-bold text-white ">Scroll Down</span>
           </div>
         </div>
 
@@ -47,26 +46,21 @@ const index: NextPage = () => {
             style={{
               backgroundImage: "url('/images/emeraldo.jpg')",
             }}
-            className="flex  w-screen flex-col items-center justify-center  bg-cover bg-center backdrop-blur-lg"
+            className="flex  w-screen flex-col items-center justify-center  bg-cover bg-center "
           >
             <div className=" m-auto my-20 grid w-full rounded-lg p-10 text-center backdrop-blur-lg md:grid-cols-2">
-              {/* <video
-              loop autoPlay
-                className="m-auto rounded-lg backdrop-blur-lg"
-                src="/images/87494-blop-violeta-loop.mp4"
-                
-              /> */}
               <div className=" m-auto p-5 text-lg text-white  md:ml-5 md:text-left">
                 <div className="mb-3 text-3xl  font-semibold">
                   Meditation With Amethyst is Fun 🔮
                 </div>
                 <div className="">
-                Amethyst is a purple variety of quartz crystal. It has
-                 long been considered an extremely powerful metaphysical stone 
-                 and is used for protection, healing, inner strength and peaceful
-                  lucid dreaming. Meditation with Amethyst can help you feel calm, 
-                  relaxed, focused and alert. Meditation with Amethyst can be used by
-                   anyone to achieve these benefits in their daily lives or as part of a meditation practice.
+                  Amethyst is a purple variety of quartz crystal. It has long
+                  been considered an extremely powerful metaphysical stone and
+                  is used for protection, healing, inner strength and peaceful
+                  lucid dreaming. Meditation with Amethyst can help you feel
+                  calm, relaxed, focused and alert. Meditation with Amethyst can
+                  be used by anyone to achieve these benefits in their daily
+                  lives or as part of a meditation practice.
                 </div>
               </div>
             </div>
@@ -95,12 +89,11 @@ const index: NextPage = () => {
                 peace.
               </div>
               <div className="mr-24 flex items-center justify-center space-y-4 duration-500 ease-in-out  hover:scale-125">
-                <a
-                  href=""
-                  className="text-md mt-10 ml-20 items-center rounded-lg bg-white px-10 py-3 font-bold text-black shadow-lg shadow-blue-700"
-                >
-                  Play Playlist
-                </a>
+                <Link href="../meditation/PrePlaylist" passHref>
+                  <button className="text-md mt-10 ml-20 items-center rounded-lg bg-white px-10 py-3 font-bold text-black shadow-lg shadow-blue-700">
+                    Play Playlist
+                  </button>
+                </Link>
               </div>
             </div>
           </div>
@@ -123,12 +116,11 @@ const index: NextPage = () => {
                 side.
               </div>
               <div className="mr-24 flex items-center justify-center space-y-4 duration-500 ease-in-out  hover:scale-125">
-                <a
-                  href=""
-                  className="text-md mt-10 ml-20 items-center rounded-lg bg-white px-10 py-3 font-bold text-black shadow-lg shadow-blue-700"
-                >
-                  Play Playlist
-                </a>
+                <Link href="../meditation/PrePlaylist" passHref>
+                  <button className="text-md mt-10 ml-20 items-center rounded-lg bg-white px-10 py-3 font-bold text-black shadow-lg shadow-blue-700">
+                    Play Playlist
+                  </button>
+                </Link>
               </div>
             </div>
           </div>
@@ -147,21 +139,21 @@ const index: NextPage = () => {
                 Calm Nights
               </div>
               <div className="text-white ">
-              A beautiful amethyst will help you relax and enjoy peaceful nights.
+                A beautiful amethyst will help you relax and enjoy peaceful
+                nights.
               </div>
               <div className="mr-24 flex items-center justify-center space-y-4 duration-500 ease-in-out hover:scale-125">
-                <a
-                  href=""
-                  className="text-md mt-10 ml-20 items-center  rounded-lg bg-white px-10 py-3 font-bold text-black shadow-lg shadow-blue-700"
-                >
-                  Play Playlist
-                </a>
+                <Link href="../meditation/PrePlaylist" passHref>
+                  <button className="text-md mt-10 ml-20 items-center rounded-lg bg-white px-10 py-3 font-bold text-black shadow-lg shadow-blue-700">
+                    Play Playlist
+                  </button>
+                </Link>
               </div>
             </div>
           </div>
         </div>
 
-        <div className="grid w-full  bg-black py-20 text-emerald-600 md:grid-cols-2">
+        <div className="grid w-full bg-black py-20 text-emerald-500 md:grid-cols-2">
           <div className=" my-auto p-8">
             <div className="title mb-5 text-3xl font-semibold">
               Want to know about meditation for kids?
@@ -176,9 +168,11 @@ const index: NextPage = () => {
               relationships.
             </div>
             <div className="mr-24 flex items-center justify-center space-y-4 duration-500 ease-in-out hover:rotate-6 hover:scale-125">
-              <a href='/meditationForKids' className="mt-10 rounded-lg bg-white px-2 py-3 font-bold text-black shadow-lg shadow-emerald-800">
-                Meditation for kids
-              </a>
+              <Link href="/meditationForKids" passHref>
+                <button className="mt-10 rounded-lg bg-white px-2 py-3 font-bold text-black shadow-lg shadow-emerald-600">
+                  Meditation for kids
+                </button>
+              </Link>
             </div>
           </div>
           <div className=" mx-5 max-h-96 flex-none overflow-hidden rounded-lg">

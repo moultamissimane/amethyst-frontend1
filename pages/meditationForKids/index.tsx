@@ -1,11 +1,23 @@
-import React from 'react'
+import React, { useRef } from 'react'
 import { NextPage } from 'next'
 import Header from '../../components/Header'
 import LottieMoon from '../../components/LottieMoon'
 import Footer from '../../components/Footer'
 import Image from 'next/image'
+import Link from 'next/link'
 
 const index: NextPage = () => {
+  const FamiliesRef = useRef<any>(null)
+
+  const scrollMe = () => {
+    const element = FamiliesRef.current
+
+    element.scrollIntoView({
+      behavior: 'smooth',
+      block: 'start',
+      inline: 'nearest',
+    })
+  }
   return (
     <div className=" min-w-screen relative min-h-screen overflow-auto bg-black">
       <Header />
@@ -23,17 +35,19 @@ const index: NextPage = () => {
               us.With Amethyst, you'll learn how to create healthy sleep habits
               and improve your chances for a more restful night's sleep.
             </p>
-            <div className="mr-24 flex items-center justify-center space-y-4 duration-500 ease-in-out hover:rotate-6 hover:scale-125">
-              <a
-                href="/#"
-                className="mt-10 rounded-lg bg-white px-2 py-3 font-bold text-black shadow-lg shadow-purple-500"
-              >
+            <div className="mr-24  flex items-center justify-center space-y-4">
+              <Link href="../meditation/PrePlaylist" passHref> 
+              <button className="mt-10 rounded-lg bg-white px-2 py-3 font-bold text-black shadow-lg shadow-purple-500">
                 Get Started
-              </a>
+              </button>
+              </Link>
             </div>
           </div>
         </div>
-        <div className="mb-10 mt-10 flex cursor-pointer items-center justify-center space-y-4">
+        <div
+          onClick={scrollMe}
+          className="mb-10 mt-10 flex cursor-pointer items-center justify-center space-y-4"
+        >
           <div className="animate-pulse" title="Scroll to Next Section">
             <div className="h-7 w-4 animate-bounce rounded-lg border-2 border-white">
               <div className="mx-auto mt-1 h-3 w-1 rounded-xl border-2 border-white"></div>
@@ -47,7 +61,7 @@ const index: NextPage = () => {
             <div className=" mb-5 text-3xl font-semibold">
               Want to know about meditation for kids?
             </div>
-            <div className=" mb-7 text-lg">
+            <div className="mb-7 text-lg">
               Teaching mindfulness to kids can help shape three critical skills
               developed in early childhood: paying attention and remembering
               information, shifting back and forth between tasks, and behaving
@@ -56,10 +70,10 @@ const index: NextPage = () => {
               planning, reasoning, problem-solving, and positive social
               relationships.
             </div>
-            <div className=" mb-5 text-3xl font-semibold">
+            <div className="mb-5 text-3xl font-semibold">
               Guided Mindfulness Meditation for Kids
             </div>
-            <div className=" text-lg">
+            <div className="text-lg">
               Once your child is comfortable with the idea of meditation, you
               can offer them tools to refine their own practice. Here are three
               guided practices developed for kids. Feel free to join your child
@@ -140,7 +154,7 @@ const index: NextPage = () => {
               to notice what has gone well, and see what happens next.
             </div>
           </div>
-          <div className=" mx-5 max-h-96 flex-none overflow-hidden rounded-lg">
+          <div className="mx-5 max-h-96 flex-none overflow-hidden rounded-lg">
             <div>
               <img src="/images/Screenshot8.png" alt="forest" />
             </div>
@@ -148,16 +162,16 @@ const index: NextPage = () => {
         </div>
 
         <div className="container ml-32 grid w-full py-20 text-white md:grid-cols-2">
-          <div className="mx-5 max-h-96  overflow-hidden rounded-lg">
+          <div className="mx-5 max-h-96 overflow-hidden rounded-lg">
             <div>
               <img src="/images/Screenshot6.png" alt="forest" />
             </div>
           </div>
-          <div className=" my-auto p-8">
-            <div className=" mb-5 text-3xl font-semibold">
+          <div className="my-auto p-8">
+            <div ref={FamiliesRef} className="mb-5 text-3xl font-semibold">
               5 Things Mindful Families Do Differently
             </div>
-            <div className=" text-lg">
+            <div className="text-lg">
               <span className="text-xl text-purple-400">1. </span>
               <span className="text-xl font-bold underline">
                 Embrace Imperfection

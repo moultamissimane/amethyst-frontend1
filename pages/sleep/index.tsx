@@ -3,7 +3,7 @@ import { NextPage } from 'next'
 import Header from '../../components/Header'
 import LottieMoon from '../../components/LottieMoon'
 import Footer from '../../components/Footer'
-import Image from 'next/image'
+// import Image from 'next/image'
 
 const index: NextPage = () => {
   return (
@@ -44,12 +44,12 @@ const index: NextPage = () => {
           </div>
         </div>
 
-        <div className="flex w-screen  overflow-hidden bg-white">
+        <div className="flex w-screen overflow-hidden bg-white">
           <div
             style={{
               backgroundImage: "url('/images/purple.jpg')",
             }}
-            className="flex  w-screen flex-col items-center justify-center  bg-cover bg-center backdrop-blur-lg"
+            className="flex w-screen flex-col items-center justify-center  bg-cover bg-center backdrop-blur-lg"
           >
             <div className=" m-auto my-20 grid w-full rounded-lg p-10 text-center backdrop-blur-lg md:grid-cols-2">
               {/* <video
@@ -78,12 +78,12 @@ const index: NextPage = () => {
         <div className="my-10 bg-black text-center text-3xl font-semibold text-white">
           Improve your sleep with our lessons
         </div>
-        <div className=" grid bg-black text-gray-800 md:grid-cols-3 md:px-12">
+        <div className="grid bg-black text-gray-800 md:grid-cols-3 md:px-12">
           <div className="m-5 p-3 mx-auto flex max-w-sm flex-col overflow-hidden rounded text-sm shadow-lg sm:mx-auto md:m-5">
             <div className="duration-500 ease-in-out hover:scale-125 rounded-xl">
               <img src="/images/gemstones.jpg" alt="forest" className='rounded-xl'/>
             </div>
-            <div className=" p-10 pt-2 text-center">
+            <div className="p-10 pt-2 text-center">
               <div className=" my-2 text-xl font-semibold text-white">
                 Gemstones for meditation
               </div>
@@ -165,7 +165,7 @@ const index: NextPage = () => {
               antique shop! This sleep-friendly app has everything you need to
               become immersed in the story. Take a deep breath. Welcome to your
               journey toward self-improvement. Meditation is more accessible
-              than you think. It’s still going to require some effort on your
+              than you think. It's still going to require some effort on your
               part, but this is the start of something great.
             </div>
             <div className="mr-24 flex items-center justify-center space-y-4 duration-500 ease-in-out hover:rotate-6 hover:scale-125">

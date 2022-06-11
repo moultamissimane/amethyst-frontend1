@@ -4,7 +4,6 @@ import Header from '../../components/Header'
 import Footer from '../../components/Footer'
 import Link from 'next/link'
 
-
 const index: NextPage = () => {
   const testimonialsRef = useRef<any>(null)
 
@@ -22,42 +21,37 @@ const index: NextPage = () => {
     {
       image: '/images/ClearQuartz.png',
       title: 'Clear Quartz',
-      link:'ReadAboutClearQuartz'
+      link: 'ReadAboutClearQuartz',
     },
     {
       image: '/images/amethyst400.png',
       title: 'Amethyst',
-      link:'ReadAboutAmethyst'
-
+      link: 'ReadAboutAmethyst',
     },
     {
       image: '/images/rose-quartz-png-5-Transparent-Images.png',
       title: 'Rose Quartz',
-      link:'ReadAboutRose'
-
+      link: 'ReadAboutRose',
     },
     {
       image: '/images/slinite-quartz.png',
       title: 'Selenite',
-      link:'ReadAboutSelenite'
-
+      link: 'ReadAboutSelenite',
     },
     {
       image: '/images/tourmaline.png',
       title: 'Black Tourmaline',
-      link:'ReadAboutBlackTourmaline'
-
+      link: 'ReadAboutBlackTourmaline',
     },
     {
       image: '/images/BlackQuartz.png',
       title: 'Smokey Quartz',
-      link:'ReadAboutSmokeyQuartz'
-
+      link: 'ReadAboutSmokeyQuartz',
     },
   ]
 
   return (
-    <div className="relative flex min-h-screen min-w-full items-center justify-center overflow-auto bg-black"> 
+    <div className="relative flex min-h-screen min-w-full items-center justify-center overflow-auto bg-black">
       <Header />
       <div className="m-auto">
         <video
@@ -65,7 +59,7 @@ const index: NextPage = () => {
           autoPlay
           loop
           muted
-        >
+          >
           <source src="/images/Gemstones.mp4" type="video/mp4" />
         </video>
         <div
@@ -79,33 +73,25 @@ const index: NextPage = () => {
             <span className="-ml-8 font-bold text-black">Scroll Down</span>
           </div>
         </div>
-        <div className="mt-24 flex flex-wrap items-center justify-between px-2 md:px-0">
-          <div className="w-full lg:w-6/12">
-            {/* <div className="mr-24  flex items-center justify-center space-y-4">
-              <button className="mt-10 rounded-lg bg-white px-2 py-3 font-bold text-black shadow-lg shadow-purple-500">
-                Get Started
-              </button>
-            </div> */}
-          </div>
-        </div>
 
         <div className="my-10 bg-black text-center text-3xl font-semibold text-white">
           6 Gemstones for a deeply meditation session
           <div className="grid bg-black text-gray-800 md:grid-cols-3 md:px-12">
             {cards?.map((e, i) => (
-              <div key={i} className="m-5 mx-auto flex justify-center items-center max-w-sm flex-col overflow-hidden rounded p-3 text-sm shadow-lg sm:mx-auto md:m-5">
-                  <Link href={`/articles/${e?.link}` || "#"}>
-                <div className="cursor-pointer w-56">
-
-                 <img src={(e.image)} alt="" />
-                </div>
-                  </Link>
+              <div
+                key={i}
+                className="m-5 mx-auto flex max-w-sm flex-col items-center justify-center overflow-hidden rounded p-3 text-sm shadow-lg sm:mx-auto md:m-5"
+              >
+                <Link href={`/articles/${e?.link}` || '#'}>
+                  <div className="w-56 cursor-pointer">
+                    <img src={e.image} alt="" />
+                  </div>
+                </Link>
                 <div className=" p-10 pt-2 text-center text-white">
                   <div className=" my-2 text-xl font-semibold ">{e.title}</div>
                 </div>
               </div>
             ))}
-
           </div>
         </div>
 

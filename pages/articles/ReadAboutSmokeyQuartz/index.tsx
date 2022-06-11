@@ -1,10 +1,23 @@
-import React from 'react'
+import React, { useRef } from 'react'
+import Link from 'next/link'
 import { NextPage } from 'next'
 import Header from '../../../components/Header'
 import LottieMoon from '../../../components/LottieMoon'
 import Footer from '../../../components/Footer'
 
 const index: NextPage = () => {
+  const GemstonesRef = useRef<any>(null)
+
+  const scrollMe = () => {
+    const element = GemstonesRef.current
+
+    element.scrollIntoView({
+      behavior: 'smooth',
+      block: 'start',
+      inline: 'nearest',
+    })
+  }
+
   return (
     <div className=" min-w-screen relative min-h-screen overflow-auto bg-black">
       <Header />
@@ -32,7 +45,10 @@ const index: NextPage = () => {
             </div>
           </div>
         </div>
-        <div className="mb-10 mt-10 flex cursor-pointer items-center justify-center space-y-4">
+        <div
+          onClick={scrollMe}
+          className="mb-10 mt-10 flex cursor-pointer items-center justify-center space-y-4"
+        >
           <div className="animate-pulse" title="Scroll to Next Section">
             <div className="h-7 w-4 animate-bounce rounded-lg border-2 border-white">
               <div className="mx-auto mt-1 h-3 w-1 rounded-xl border-2 border-white"></div>
@@ -82,7 +98,7 @@ const index: NextPage = () => {
           </div>
           <div className=" mx-5 max-h-96 flex-none overflow-hidden rounded-lg">
             <div className="">
-              <img src="/images/seleniteQuote.jpg" alt="Selenite" />
+              <img src="/images/SmokeyQuartz.jpg" alt="forest" />
             </div>
           </div>
         </div>
@@ -90,11 +106,11 @@ const index: NextPage = () => {
         <div className="container ml-32 grid w-full py-20 text-white md:grid-cols-2">
           <div className="mx-5 max-h-96  overflow-hidden rounded-lg">
             <div>
-              <img src="/images/allGems.jpg" alt="All gems" />
+              <img src="/images/allGems.jpg" alt="forest" />
             </div>
           </div>
           <div className=" my-auto p-8">
-            <div className=" mb-5 text-3xl font-semibold">
+            <div ref={GemstonesRef} className=" mb-5 text-3xl font-semibold">
               The 6 best gemstones for meditation
             </div>
             <div className=" text-lg">
@@ -108,23 +124,20 @@ const index: NextPage = () => {
               perfect crystals to reach for when you're unsure of what you want
               to work with!
               <br />
-              <span className="text-xl font-bold underline">SELENITE</span>
-              <div className="duration-500 ease-in-out hover:scale-90">
-                <img src="/images/SmokeyQuartz.jpg" alt="Clear Quartz" />
+              <span className="text-2xl font-bold underline">SmokeyQuartz</span>
+              <div className="ml-32 w-60 duration-500 ease-in-out hover:scale-90">
+                <img src="/images/BlackQuartz.png" alt="Clear Quartz" />
               </div>
               <br />
-              Selenite is another powerful crystal associated with the crown
-              chakra. It is particularly beneficial for developing peace,
-              serenity and universal consciousness.
+              Smokey Quartz is an amazing stone to meditate with if you're
+              feeling particularly vulnerable to negativity. It helps to dispel
+              negative energy, remove fear and uplift you if you're suffering
+              from low mood or anxiety.
               <br />
-              Selenite is the perfect stone to meditate with if you want to
-              clear your mind space and gain clarity. It can help to develop
-              self awareness and make you more in tune with yourself and your
-              surroundings.
-              <br />
-              It's calming properties make it an amazing tool for accessing
-              meditative states.
-              <br />
+              Smokey quartz is a grounding stone, associated with the root
+              chakra. Meditating with this crystal can make you feel more
+              centered and calm, bringing you back into balance when things feel
+              overwhelming.
             </div>
           </div>
         </div>

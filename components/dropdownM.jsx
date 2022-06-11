@@ -1,6 +1,11 @@
 import React from "react";
-import { createPopper } from "@popperjs/core";
+import { createPopper } from "@popperjs/core"
 import Link from 'next/link'
+import PersonIcon from '@mui/icons-material/Person'
+import FavoriteIcon from '@mui/icons-material/Favorite'
+import ListIcon from '@mui/icons-material/List'
+import LogoutIcon from '@mui/icons-material/Logout';
+import { red } from '@mui/material/colors'
 
 
 const Dropdown = ({ color }) => {
@@ -51,48 +56,53 @@ const Dropdown = ({ color }) => {
               }
               style={{ minWidth: "12rem" }}
             >
-              <Link href="/profile" passHref>
+              <Link href="/myAmethyst" passHref>
                 <div
                   className={
-                    "text-sm py-2 cursor-pointer px-4 font-bold block w-full whitespace-nowrap bg-transparent " +
+                    "text-sm py-2 cursor-pointer px-4 font-bold space-x-3 w-full whitespace-nowrap bg-transparent" +
                     (color === "white" ? " text-black" : "text-white")
                   }
-                 
+
                 >
-                  Profile
+                  <PersonIcon color="secondary" />
+                  <span>myAmethyst</span>
                 </div>
               </Link>
-              <Link href="/profile" passHref>
-              <div
-                className={
-                  "text-sm py-2 px-4 cursor-pointer font-bold block w-full whitespace-nowrap bg-transparent " +
-                  (color === "white" ? " text-black" : "text-white")
-                }
-              >
-                My likes
-              </div>
+              <Link href="/myAmethyst" passHref>
+                <div
+                  className={
+                    "text-sm py-2 px-4 cursor-pointer font-bold space-x-3 w-full whitespace-nowrap bg-transparent" +
+                    (color === "white" ? " text-black" : "text-white")
+                  }
+                >
+                  <FavoriteIcon sx={{ color: red[400] }} />
+
+                  <span>My likes</span>
+                </div>
               </Link>
-              <Link href="/profile" passHref>
-              <div
-                className={
-                  "text-sm py-2 px-4 cursor-pointer font-bold block w-full whitespace-nowrap bg-transparent " +
-                  (color === "white" ? " text-black" : "text-white")
-                }
-              >
-                My Playlists
-              </div>
+              <Link href="../playlist" passHref>
+                <div
+                  className={
+                    "text-sm py-2 px-4 cursor-pointer font-bold space-x-3 w-full whitespace-nowrap bg-transparent" +
+                    (color === "white" ? " text-black" : "text-white")
+                  }
+                >
+                  <ListIcon />
+                  <span>My Playlists</span>
+                </div>
               </Link>
 
               <div className="h-0 my-2 border border-solid border-t-0 border-slate-800 opacity-25" />
               <Link href="/landingPages" passHref>
-              <div
-                className={
-                  "text-sm py-2 px-4 cursor-pointer font-bold block w-full whitespace-nowrap bg-transparent " +
-                  (color === "white" ? " text-black" : "text-white")
-                }
-              >
-                Logout
-              </div>
+                <div
+                  className={
+                    "text-sm py-2 px-4 cursor-pointer font-bold space-x-3 w-full whitespace-nowrap bg-transparent " +
+                    (color === "white" ? " text-black" : "text-white")
+                  }
+                >
+                  <LogoutIcon />
+                  <span>Logout</span>
+                </div>
               </Link>
             </div>
           </div>
