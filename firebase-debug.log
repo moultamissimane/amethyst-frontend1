@@ -1,0 +1,16 @@
+[debug] [2022-06-12T13:13:40.898Z] ----------------------------------------------------------------------
+[debug] [2022-06-12T13:13:40.902Z] Command:       C:\Program Files\nodejs\node.exe C:\Users\Youcode\AppData\Roaming\npm\node_modules\firebase-tools\lib\bin\firebase.js functions:config:set algolia.app=Your_app_id algolia.key=admin_api_key
+[debug] [2022-06-12T13:13:40.903Z] CLI Version:   11.0.1
+[debug] [2022-06-12T13:13:40.903Z] Platform:      win32
+[debug] [2022-06-12T13:13:40.903Z] Node Version:  v16.14.2
+[debug] [2022-06-12T13:13:40.905Z] Time:          Sun Jun 12 2022 14:13:40 GMT+0100 (GMT+01:00)
+[debug] [2022-06-12T13:13:40.905Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2022-06-12T13:13:41.025Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2022-06-12T13:13:41.026Z] > authorizing via signed-in user (imanelolirock@gmail.com)
+[debug] [2022-06-12T13:13:41.026Z] [iam] checking project amethyst-e71d3 for permissions ["firebase.projects.get","runtimeconfig.configs.create","runtimeconfig.configs.delete","runtimeconfig.configs.get","runtimeconfig.configs.list","runtimeconfig.configs.update","runtimeconfig.variables.create","runtimeconfig.variables.delete","runtimeconfig.variables.get","runtimeconfig.variables.list","runtimeconfig.variables.update"]
+[debug] [2022-06-12T13:13:41.032Z] >>> [apiv2][query] POST https://cloudresourcemanager.googleapis.com/v1/projects/amethyst-e71d3:testIamPermissions [none]
+[debug] [2022-06-12T13:13:41.032Z] >>> [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/amethyst-e71d3:testIamPermissions {"permissions":["firebase.projects.get","runtimeconfig.configs.create","runtimeconfig.configs.delete","runtimeconfig.configs.get","runtimeconfig.configs.list","runtimeconfig.configs.update","runtimeconfig.variables.create","runtimeconfig.variables.delete","runtimeconfig.variables.get","runtimeconfig.variables.list","runtimeconfig.variables.update"]}
+[debug] [2022-06-12T13:13:42.161Z] <<< [apiv2][status] POST https://cloudresourcemanager.googleapis.com/v1/projects/amethyst-e71d3:testIamPermissions 200
+[debug] [2022-06-12T13:13:42.162Z] <<< [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/amethyst-e71d3:testIamPermissions {"permissions":["firebase.projects.get","runtimeconfig.configs.create","runtimeconfig.configs.delete","runtimeconfig.configs.get","runtimeconfig.configs.list","runtimeconfig.configs.update","runtimeconfig.variables.create","runtimeconfig.variables.delete","runtimeconfig.variables.get","runtimeconfig.variables.list","runtimeconfig.variables.update"]}
+[debug] [2022-06-12T13:13:42.166Z] >>> [apiv2][query] GET https://serviceusage.googleapis.com/v1/projects/amethyst-e71d3/services/runtimeconfig.googleapis.com [none]

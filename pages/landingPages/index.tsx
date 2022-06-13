@@ -64,7 +64,7 @@ const LandingPage: NextPage = () => {
           <br /> so you can get the best night's rest, every night.
         </p>
         <div className="flex w-full justify-center rounded-2xl ">
-          <div className="flex w-full max-w-[50%] cursor-pointer   flex-wrap justify-between p-4"
+          <div className="flex w-full max-w-[50%] cursor-pointer flex-wrap justify-between p-4"
           >
             {cards?.map((e, i) => (
               <div

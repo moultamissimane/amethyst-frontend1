@@ -1,9 +1,10 @@
 import React from 'react'
 
-const search = () => {
-  return (
-    <div>search</div>
+function Search() {
+   return (
+       <div className="h-full w-2/4 bg-slate-500">
+          {/*search*/}
+       </div>
   )
 }
-
-export default search
+export default Search

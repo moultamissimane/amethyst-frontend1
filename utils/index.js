@@ -1,6 +1,6 @@
 export const getUser = () => {
     return new Promise((resolve, reject) => {
-      data = data.trim();
+      // data = data.trim();
       // localStorage allows us to save key/value pairs in the browser
       const user = JSON.parse(localStorage.getItem(user));
       if (user) {

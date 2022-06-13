@@ -3,6 +3,7 @@ import { NextPage } from 'next'
 import Header from '../../../components/Header'
 import Footer from '../../../components/Footer'
 import Link from 'next/link'
+import LockIcon from '@mui/icons-material/Lock';
 
 
 const index: NextPage = () => {
@@ -139,16 +140,7 @@ const index: NextPage = () => {
             <span className="-ml-8 font-bold text-black">Scroll Down</span>
           </div>
         </div>
-        {/* <div className="mt-24 flex flex-wrap items-center justify-between px-2 md:px-0">
-          <div className="w-full lg:w-6/12"> */}
-            {/* <div className="mr-24  flex items-center justify-center space-y-4">
-              <button className="mt-10 rounded-lg bg-white px-2 py-3 font-bold text-black shadow-lg shadow-purple-500">
-                Get Started
-              </button>
-            </div> */}  
-          {/* </div>
-        </div> */}
-
+        
         <div className="m-10 pt-10 bg-black text-center text-3xl font-semibold text-white">
           Dive into thousands of playlists created by Amethyst
           <div className="grid bg-black text-gray-800 lg:grid-cols-4 md:grid-cols-2 md:px-12">
@@ -160,6 +152,7 @@ const index: NextPage = () => {
                 </div>
                   {/* </Link> */}
                 <div className=" p-10 pt-2 text-center text-white">
+                  <LockIcon />
                   <div className=" my-2 text-xl font-semibold ">{e.title}</div>
                 </div>
               </div>

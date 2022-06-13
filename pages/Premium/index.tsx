@@ -1,9 +1,9 @@
 import React from 'react'
-import Audio from '../../../components/Audio'
+import PricingPlan from '../../components/PricingPlan'
 const index = () => {
   return (
     <div>
-      <Audio />
+        <PricingPlan />
     </div>
   )
 }
