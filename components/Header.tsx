@@ -6,30 +6,30 @@ import { createPopper } from '@popperjs/core'
 import { BurgerMenu } from '../components/BurgerMenu'
 
 const Header = () => {
-  const [active, setActive] = useState(false);
+  const [active, setActive] = useState(false)
 
   const handleClick = () => {
-    setActive(!active);
-  };
+    setActive(!active)
+  }
 
   return (
     <div className="fixed top-0 left-0 z-10 w-full bg-transparent mix-blend-difference backdrop-blur-lg">
       <nav className="relative px-6">
         <div className="flex items-center justify-between">
-          <img
-            src="/images/logo.png"
-            className="hidden w-40 p-2 md:block lg:block xl:block"
-          />
-          <img
-            src="/images/logo_mobile.png"
-            className="w-20 p-2 md:hidden lg:hidden xl:hidden"
-          />
-          
+          <Link href="/home">
+            <img
+              src="/images/logo.png"
+              className="hidden w-40 p-2 md:block lg:block xl:block"
+            />
+              </Link>
+            <img
+              src="/images/logo_mobile.png"
+              className="w-20 p-2 md:hidden lg:hidden xl:hidden"
+            />
+
           <div
-          className={`${
-            active ? '' : 'hidden'
-          }
-          hidden justify-center font-semibold text-white w-full lg:inline-flex lg:flex-grow lg:w-auto`}
+            className={`${active ? '' : 'hidden'}
+          hidden w-full justify-center font-semibold text-white lg:inline-flex lg:w-auto lg:flex-grow`}
           >
             <Link href="/home">
               <div className="flex cursor-pointer px-6 py-1 md:flex-row md:items-center">
@@ -60,9 +60,7 @@ const Header = () => {
           <div>
             <Dropdown />
           </div>
-          <div
-            
-          >
+          <div>
             <BurgerMenu />
           </div>
         </div>
