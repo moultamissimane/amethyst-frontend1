@@ -3,7 +3,7 @@ import Link from 'next/Link'
 
 const LoginHeader = () => {
   return (
-    <div className="fixed top-0 left-0 w-full bg-transparent">
+    <div className="fixed z-50 top-0 left-0 w-full bg-transparent">
       <nav className="relative px-6">
         <div className="flex flex-row items-center justify-between bg-transparent">
           <img
@@ -16,23 +16,23 @@ const LoginHeader = () => {
           />
 
           <div className="flex flex-col items-center">
-            <button className="rounded-lg p-2 md:hidden"></button>
+            {/* <button className="rounded-lg p-2 md:hidden"></button> */}
             <div className="absolute inset-x-0 top-16 hidden  py-3 text-white shadow-md group-hover:block md:static md:block md:shadow-none">
-              <div className="flex flex-row items-center justify-center text-center font-semibold text-white">
-                <Link href="/Premium">
-                  <div className="flex flex-col px-6 py-1 md:flex-row md:items-center">
+              <div className="flex flex-row items-center justify-center text-center font-semibold cursor-pointer text-white">
+                <Link href="/auth/login">
+                  <div className="flex flex-col cursor-pointer px-6 py-1 md:flex-row md:items-center">
                     Login
                   </div>
                 </Link>
 
-                <Link href="/Premium">
-                  <div className="flex flex-col px-6 py-1 md:flex-row md:items-center">
+                <Link href="/auth/register">
+                  <div className="flex flex-col px-6 py-1 cursor-pointer md:flex-row md:items-center">
                     Sign up
                   </div>
                 </Link>
 
                 <Link href="/Premium">
-                  <div className="flex flex-col rounded-full border-4 border-white p-2 px-6 py-1 md:flex-row md:items-center">
+                  <div className="flex flex-col rounded-full cursor-pointer border-4 border-white p-2 px-6 py-1 md:flex-row md:items-center">
                     Try Amethyst Premium
                   </div>
                 </Link>

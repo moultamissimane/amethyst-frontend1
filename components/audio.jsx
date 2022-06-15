@@ -11,6 +11,7 @@ import FastRewindRounded from '@mui/icons-material/FastRewindRounded'
 import VolumeUpRounded from '@mui/icons-material/VolumeUpRounded'
 import VolumeDownRounded from '@mui/icons-material/VolumeDownRounded'
 import ArrowBackIcon from '@mui/icons-material/ArrowBack'
+import SliderCP from './SliderCP'
 
 const WallPaper = styled('div')({
   position: 'absolute',
@@ -75,21 +76,21 @@ export default function Audio() {
   const [currentaudioIndex, setCurrentaudioIndex] = useState(0);
   const [nextaudioIndex, setNextaudioIndex] = useState(currentaudioIndex + 1);
 
-  const [audios, setaudios] = useState([
-   {
-      title: "audio 1",
-      artist: "artist 1",
-      img_src: "../../../public/images/BridgePlaylist.jpg",
-      src: "../../../songs/The Chainsmokers - Solo Mission (Official Lyric Video).mp3",
-   },
-   {
-      title: "audio 2",
-      artist: "artist 2",
-      img_src: "../../../public/images/BridgePlaylist.jpg",
-      src: "../../../songs/The Chainsmokers - Solo Mission (Official Lyric Video).mp3",
-   },
- ]);
-  
+  // const [audios, setaudios] = useState([
+  //   {
+  //     title: "audio 1",
+  //     artist: "artist 1",
+  //     img_src: "../../../public/images/BridgePlaylist.jpg",
+  //     src: "../../../songs/The Chainsmokers - Solo Mission (Official Lyric Video).mp3",
+  //   },
+  //   {
+  //     title: "audio 2",
+  //     artist: "artist 2",
+  //     img_src: "../../../public/images/BridgePlaylist.jpg",
+  //     src: "../../../songs/The Chainsmokers - Solo Mission (Official Lyric Video).mp3",
+  //   },
+  // ]);
+
   const theme = useTheme();
   const duration = 200; // seconds
   const [position, setPosition] = useState(32);
@@ -106,8 +107,17 @@ export default function Audio() {
   const lightIconColor =
     theme.palette.mode === 'dark' ? 'rgba(255,255,255,0.4)' : 'rgba(0,0,0,0.4)';
   return (
-    <Box sx={{ width: '100%', overflow: 'hidden', mt: 32, }}>
-      <ArrowBackIcon className='z-100 text-2xl'/>
+
+    <Box sx={{ width: '100%', overflow: 'hidden', mt: 32 }}>
+      <WallPaper >
+
+        <img
+          className='flex h-screen w-screen bg-black items-center justify-center object-cover blur-md '
+          alt="bg-image"
+          src="/images/Sea2Playlist.jpg"
+        />
+      </WallPaper>
+      <ArrowBackIcon className='z-100 text-2xl' />
       <Widget>
 
         <Box sx={{ display: 'flex', alignItems: 'center' }}>
@@ -129,7 +139,12 @@ export default function Audio() {
             </div>
           </Box>
         </Box>
-        <Slider
+        {/* <Slider
+          // <audio controls>
+
+          src="https://firebasestorage.googleapis.com/v0/b/amethyst-e71d3.appspot.com/o/X2Download.com%20-%20The%20Chainsmokers%20-%20Something%20Different%20(Official%20Lyric%20Video)%20(192%20kbps).mp3?alt=media&token=aed85a1f-99ea-446a-a60c-405f369c0579" type="audio/ogg"
+
+          //</audio>
           aria-label="time-indicator"
           size="small"
           value={position}
@@ -162,7 +177,8 @@ export default function Audio() {
               opacity: 0.28,
             }
           }}
-        />
+
+        /> */}
         <Box
           sx={{
             display: 'flex',
@@ -187,7 +203,7 @@ export default function Audio() {
           </IconButton>
 
           <IconButton
-          onPlay={(e) => console.log("onPlay")}
+            onPlay={(e) => console.log("onPlay")}
             aria-label={paused ? 'play' : 'pause'}
             onClick={() => setPaused(!paused)}
           >
@@ -230,14 +246,8 @@ export default function Audio() {
           <VolumeUpRounded htmlColor={lightIconColor} />
         </Stack>
       </Widget>
-      <WallPaper >
 
-        <img
-        className='flex h-screen w-screen items-center justify-center object-cover blur-md '
-          alt="bg-image"
-          src="/images/Sea2Playlist.jpg"
-        />
-      </WallPaper>
+
 
     </Box>
   );

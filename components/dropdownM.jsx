@@ -29,7 +29,7 @@ const Dropdown = ({ color }) => {
     : (bgColor = "bg-" + color + "-500");
   return (
     <>
-      <div className="flex flex-wrap">
+      <div className="lg:flex xl:flex flex-wrap md:hidden sm:hidden">
         <div className="w-full sm:w-6/12 md:w-4/12 px-4">
           <div className="relative inline-flex align-middle w-full">
             <button

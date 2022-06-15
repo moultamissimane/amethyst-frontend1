@@ -39,6 +39,7 @@ const LoginCp = () => {
 		setSnackBarOpen(false)
 	}
 
+	const router = useRouter()
 	const handleSubmit = (event) => {
 		event.preventDefault();
 		console.log(inputs)
@@ -53,7 +54,7 @@ const LoginCp = () => {
 					setSnackBarMessage('Loged in Successfully 🎉')
 					setSnackBarOpen(true)
 					setTimeout(() => {
-						useRouter('/pages/home')
+						router.push('/home')
 					}, 1000)
 				}
 				else {
@@ -82,6 +83,7 @@ const LoginCp = () => {
 			</IconButton>
 		</>
 	);
+
 
 	return (
 		<>

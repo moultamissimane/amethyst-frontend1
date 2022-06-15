@@ -32,6 +32,7 @@ export const RegisterCp = () => {
         setSnackBarOpen(false)
     }
 
+	const router = useRouter()
     const handleSubmit = (event) => {
         event.preventDefault();
         // console.log(inputs)
@@ -46,7 +47,7 @@ export const RegisterCp = () => {
                     setSnackBarMessage('Register Successful 🎉')
                     setSnackBarOpen(true)
                     setTimeout(() => {
-                        useRouter('/pages/home')
+                        router.push('/home')
 
 
                     }, 1000)
