@@ -50,9 +50,9 @@ const index: NextPage = () => {
         >
           <div className="animate-pulse" title="Scroll to Next Section">
             <div className="h-7 w-4 animate-bounce rounded-lg border-2 border-white">
-              <div className="mx-auto mt-1 h-3 w-1 rounded-xl border-2 border-white"></div>
+              <div className="mx-auto mt-1 h-3 w-2 rounded-xl border-2 border-white"></div>
             </div>
-            <span className="-ml-8 font-bold text-white ">Scroll Down</span>
+            <span className="-ml-8 font-bold text-white">Scroll Down</span>
           </div>
         </div>
 

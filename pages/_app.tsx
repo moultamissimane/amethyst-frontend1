@@ -4,6 +4,7 @@ import Head from 'next/head'
 
 function MyApp({ Component, pageProps }: AppProps) {
   <Head>
+    <title>Amethyst</title>
     <link rel="icon"  href="../../public/favicon.ico"></link>
   </Head>
   return (

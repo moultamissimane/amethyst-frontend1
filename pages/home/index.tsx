@@ -5,7 +5,6 @@ import Lottie from '../../components/lottie'
 import Footer from '../../components/Footer'
 import Link from 'next/link'
 
-
 const home: NextPage = () => {
   const testimonialsRef = useRef<any>(null)
 
@@ -27,18 +26,18 @@ const home: NextPage = () => {
           <div className="-mt-10 lg:w-6/12 lg:py-24 xl:py-32 ">
             <Lottie />
           </div>
-          <div className="w-full lg:w-6/12 items-center justify-center">
+          <div className="w-full items-center justify-center lg:w-6/12">
             <p className="text-center indent-8 text-xl font-bold text-white  lg:w-10/12">
               <br /> Meditation is the right solution for your problems.
               Meditation can help you in all aspects of your life. It helps to
               increase your creativity, improve relationships, reduce stress and
               anxiety and much more.
             </p>
-            <div className="mr-24  flex md:items-center justify-center space-y-4">
-              <Link href="../meditation/PrePlaylist" passHref> 
-              <button className="mt-10 rounded-lg bg-white px-2 py-3 font-bold text-black shadow-lg shadow-purple-500">
-                Get Started
-              </button>
+            <div className="mr-24  flex justify-center space-y-4 md:items-center">
+              <Link href="../meditation/PrePlaylist" passHref>
+                <button className="mt-10 rounded-lg bg-white px-2 py-3 font-bold text-black shadow-lg shadow-purple-500">
+                  Get Started
+                </button>
               </Link>
             </div>
           </div>
@@ -49,9 +48,9 @@ const home: NextPage = () => {
         >
           <div className="animate-pulse" title="Scroll to Next Section">
             <div className="h-7 w-4 animate-bounce rounded-lg border-2 border-white">
-              <div className="mx-auto mt-1 h-3 w-1 rounded-xl border-2 border-white"></div>
+              <div className="mx-auto mt-1 h-3 w-2 rounded-xl border-2 border-white"></div>
             </div>
-            <span className="-ml-8 font-bold text-white ">Scroll Down</span>
+            <span className="-ml-8 font-bold text-white">Scroll Down</span>
           </div>
         </div>
 

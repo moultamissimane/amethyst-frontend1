@@ -3,6 +3,7 @@ import { NextPage } from 'next'
 import Header from '../../components/Header'
 import LottieMoon from '../../components/LottieMoon'
 import Footer from '../../components/Footer'
+import Link from 'next/link'
 // import Image from 'next/image'
 
 const index: NextPage = () => {
@@ -33,14 +34,12 @@ const index: NextPage = () => {
             </div>
           </div>
         </div>
-        <div className="mb-10 mt-10 flex cursor-pointer items-center justify-center space-y-4">
+        <div className="mb-20 mt-10 flex cursor-pointer items-center justify-center space-y-4">
           <div className="animate-pulse" title="Scroll to Next Section">
             <div className="h-7 w-4 animate-bounce rounded-lg border-2 border-white">
-              <div className="mx-auto mt-1 h-3 w-1 rounded-xl border-2 border-white"></div>
+              <div className="mx-auto mt-1 h-3 w-2 rounded-xl border-2 border-white"></div>
             </div>
-            <span className="-ml-8 font-bold text-white ">
-              Scroll Down
-            </span>
+            <span className="-ml-8 font-bold text-white">Scroll Down</span>
           </div>
         </div>
 
@@ -79,9 +78,13 @@ const index: NextPage = () => {
           Improve your sleep with our lessons
         </div>
         <div className="grid bg-black text-gray-800 md:grid-cols-3 md:px-12">
-          <div className="m-5 p-3 mx-auto flex max-w-sm flex-col overflow-hidden rounded text-sm shadow-lg sm:mx-auto md:m-5">
-            <div className="duration-500 ease-in-out hover:scale-125 rounded-xl">
-              <img src="/images/gemstones.jpg" alt="forest" className='rounded-xl'/>
+          <div className="m-5 mx-auto flex max-w-sm flex-col overflow-hidden rounded p-3 text-sm shadow-lg sm:mx-auto md:m-5">
+            <div className="rounded-xl duration-500 ease-in-out hover:scale-125">
+              <img
+                src="/images/gemstones.jpg"
+                alt="forest"
+                className="rounded-xl"
+              />
             </div>
             <div className="p-10 pt-2 text-center">
               <div className=" my-2 text-xl font-semibold text-white">
@@ -94,19 +97,22 @@ const index: NextPage = () => {
                 help you align with that intention.
               </div>
               <div className="mr-24 flex items-center justify-center space-y-4 duration-500 ease-in-out  hover:scale-125">
-                <a
-                  href=""
-                  className="mt-10 ml-20 items-center rounded-lg bg-white px-10 py-3 text-sm font-bold text-black shadow-lg shadow-blue-700"
-                >
-                  Learn more
-                </a>
+                <Link href="../amethyst">
+                  <div className="mt-6 ml-20 cursor-pointer items-center rounded-lg bg-white px-14 py-3 text-sm font-bold text-black shadow-lg shadow-blue-700">
+                    Learn more
+                  </div>
+                </Link>
               </div>
             </div>
           </div>
 
-          <div className="m-5 p-3 mx-auto flex max-w-sm flex-col overflow-hidden rounded text-sm shadow-lg sm:mx-auto md:m-5">
+          <div className="m-5 mx-auto flex max-w-sm flex-col overflow-hidden rounded p-3 text-sm shadow-lg sm:mx-auto md:m-5">
             <div className="duration-500 ease-in-out hover:scale-125">
-              <img src="/images/1_WeiQDBan0S4ytur4ldeszQ.jpg" alt="rocks" className='rounded-xl' />
+              <img
+                src="/images/breathingExercises.jpg"
+                alt="rocks"
+                className="rounded-xl"
+              />
             </div>
             <div className="m-3 pt-2 text-center">
               <div className="text-xl font-semibold text-white">
@@ -119,19 +125,22 @@ const index: NextPage = () => {
                 of your hand.
               </div>
               <div className="mr-24 flex items-center justify-center space-y-4 duration-500 ease-in-out  hover:scale-125">
-                <a
-                  href=""
-                  className="mt-6 ml-20 items-center rounded-lg bg-white px-14 py-3 text-sm font-bold text-black shadow-lg shadow-blue-700"
-                >
-                  Learn more
-                </a>
+                <Link href="../amethyst">
+                  <div className="mt-6 ml-20 cursor-pointer items-center rounded-lg bg-white px-14 py-3 text-sm font-bold text-black shadow-lg shadow-blue-700">
+                    Learn more
+                  </div>
+                </Link>
               </div>
             </div>
           </div>
 
-          <div className="m-5 p-3 mx-auto flex max-w-sm flex-col overflow-hidden rounded text-sm shadow-lg sm:mx-auto md:m-5">
+          <div className="m-5 mx-auto flex max-w-sm flex-col overflow-hidden rounded p-3 text-sm shadow-lg sm:mx-auto md:m-5">
             <div className="duration-500 ease-in-out hover:scale-125">
-              <img src="/images/sleep.jpg" alt="forest" className='rounded-xl' />
+              <img
+                src="/images/sleep.jpg"
+                alt="forest"
+                className="rounded-xl"
+              />
             </div>
             <div className="p-5 pt-2 text-center">
               <div className="my-2 text-xl font-semibold text-white">
@@ -144,12 +153,11 @@ const index: NextPage = () => {
                 your child in these meditations if it helps encourage focus.
               </div>
               <div className="mr-24 flex items-center justify-center space-y-4 duration-500 ease-in-out hover:scale-125">
-                <a
-                  href=""
-                  className="mt-10 ml-20 items-center rounded-lg  bg-white px-10 py-3 text-sm font-bold text-black shadow-lg shadow-blue-700"
-                >
-                  Learn more
-                </a>
+                <Link href="../amethyst">
+                  <div className="mt-6 ml-20 cursor-pointer items-center rounded-lg bg-white px-14 py-3 text-sm font-bold text-black shadow-lg shadow-blue-700">
+                    Learn more
+                  </div>
+                </Link>
               </div>
             </div>
           </div>

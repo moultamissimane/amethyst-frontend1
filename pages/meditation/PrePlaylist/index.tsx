@@ -23,18 +23,15 @@ const index: NextPage = () => {
     {
       image: '/images/Group2.png',
       title: 'Calm Nights',
-      link:'ReadAboutClearQuartz'
     },
     {
       image: '/images/Group3.png',
-      title: 'Finding Inner Peace',
-      link:'ReadAboutAmethyst'
+      title: 'Reduce Stress',
 
     },
     {
       image: '/images/Group4.png',
       title: 'Finding Inner Peace',
-      link:'ReadAboutAmethyst'
 
     },
     {
@@ -46,73 +43,61 @@ const index: NextPage = () => {
     {
       image: '/images/Group16.png',
       title: 'Pure Chill',
-      link:'ReadAboutBlackTourmaline'
 
     },
     {
       image: '/images/Group7.png',
       title: 'Songs Of Hope',
-      link:'ReadAboutBlackTourmaline'
 
     },
     {
       image: '/images/Group8.png',
       title: 'Sounds to calm',
-      link:'ReadAboutBlackTourmaline'
 
     },
     {
       image: '/images/Group9.png',
       title: 'Find Your Focus',
-      link:'ReadAboutBlackTourmaline'
 
     },
     {
       image: '/images/Group10.png',
       title: 'Morning Mindset',
-      link:'ReadAboutBlackTourmaline'
 
     },
     {
       image: '/images/Group11.png',
       title: 'Songs Of The Wild',
-      link:'ReadAboutBlackTourmaline'
 
     },
     {
       image: '/images/Group12.png',
       title: 'Soothing Soundtrack',
-      link:'ReadAboutBlackTourmaline'
 
     },
     {
       image: '/images/Group13.png',
       title: 'Finding Peace',
-      link:'ReadAboutBlackTourmaline'
 
     },
     {
       image: '/images/Group14.png',
       title: 'Lullabies & Sweet Dreams',
-      link:'ReadAboutBlackTourmaline'
 
     },
     {
       image: '/images/Group15.png',
       title: 'Meet Your Hero',
-      link:'ReadAboutBlackTourmaline'
 
     },
     {
       image: '/images/Group6.png',
       title: 'Free From Fear',
-      link:'ReadAboutBlackTourmaline'
 
     },
     {
       image: '/images/Group17.png',
       title: 'Raising Motivation',
-      link:'ReadAboutSmokeyQuartz'
 
     },
   ]
@@ -146,13 +131,15 @@ const index: NextPage = () => {
           <div className="grid bg-black text-gray-800 lg:grid-cols-4 md:grid-cols-2 md:px-12">
             {cards?.map((e, i) => (
               <div key={i} className=" mx-auto flex justify-center items-center max-w-sm flex-col overflow-hidden p-3 text-sm  sm:mx-auto md:m-5 ease-in-out duration-500  hover:scale-125">
-                  {/* <Link href={`/articles/${e?.link}` || "#"}> */}
+                  <Link href={"../../playlist/song"}>
                 <div className="cursor-pointer hover:shadow-slate-50">
+                  
                  <img className='w-80 h-60 rounded-xl shadow-sm border-white border-4' src={(e.image)} alt="" />
+                  
                 </div>
-                  {/* </Link> */}
+                  </Link>
                 <div className=" p-10 pt-2 text-center text-white">
-                  <LockIcon />
+                  {/* <LockIcon /> */}
                   <div className=" my-2 text-xl font-semibold ">{e.title}</div>
                 </div>
               </div>
