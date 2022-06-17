@@ -22,6 +22,8 @@ export const AudioUploader = () => {
   const inputRef = useRef()
   const inputAudioRef = useRef()
   const [progress, setProgress] = useState(0)
+  const [audioURL, setAudioURL] = useState<String>('')
+  const [title, setTitle] = useState<String>('')
 
   const handleFireBaseUpload = (type: String) => {
     setImageIsLoading(true)
@@ -48,6 +50,7 @@ export const AudioUploader = () => {
         () => {
           getDownloadURL(uploadTask.snapshot.ref).then((url) => {
             console.log(url)
+            setAudioURL(url)
             setImageIsLoading(false)
           })
         }
@@ -86,11 +89,36 @@ export const AudioUploader = () => {
     }
   }, [audioAsFile])
 
+  // var myHeaders = new Headers()
+  // myHeaders.append(
+  //   'Authorization',
+  //   'b eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJpc3MiOiJsb2NhbGhvc3QiLCJhdWQiOiJsb2NhbGhvc3QiLCJpYXQiOjE2NTU0MjE2MzQsImV4cCI6MTY1NTQyNTIzNCwicmVmZXJlbmNlIjoiQkEzN0M0MzQiLCJyb2xlIjoiYWRtaW4iLCJoYXNoIjoiJDJ5JDEyJGcxaTU3a0hFQ2JUUmFybk1TMnVjRE81ZUs4ZmNzVXZsd01lSFBzMWU3OHNTUG90NldFRFZpIn0.iGcT50NU99OQ4y8F23oekKN3mXXNx2KqY0W7tto0rUE2yWVLqCjWDK1PfZJNu2qsbN05q_EtNKOsuWxTsFu9Pg'
+  // )
+  // myHeaders.append('Content-Type', 'application/json')
+
+  // var raw = JSON.stringify({
+  //   title: title,
+  //   src: url,
+  // })
+
+  // var requestOptions = {
+  //   method: 'POST',
+  //   headers: myHeaders,
+  //   body: raw,
+  //   redirect: 'follow',
+  // }
+
+  // fetch('http://localhost/AmethystBackend/playlist/addAudio', requestOptions)
+  //   .then((response) => response.text())
+  //   .then((result) => console.log(result))
+  //   .catch((error) => console.log('error', error))
+
   return (
     <div className="m-3 w-[98%] rounded-xl p-3 shadow-md shadow-violet-600">
       <div className="w-full items-center ">
-
-      <h2 className='text-xl ml-5 mb-2 font-bold text-violet-700 '>Insert Audio Name</h2>
+        <h2 className="ml-5 mb-2 text-xl font-bold text-violet-700 ">
+          Insert Audio Name
+        </h2>
         <div className="my-10 ml-5">
           <Box
             sx={{
@@ -98,10 +126,18 @@ export const AudioUploader = () => {
               maxWidth: '100%',
             }}
           >
-            <TextField id="" label="Name of audio" color="secondary" />
+            <TextField
+              onChange={(e) => setTitle(e.target.value)}
+              value={title}
+              id=""
+              label="Name of audio"
+              color="secondary"
+            />
           </Box>
         </div>
-        <h2 className='text-xl ml-5 mb-2 font-bold text-violet-700 '>Insert Audio</h2>
+        <h2 className="ml-5 mb-2 text-xl font-bold text-violet-700 ">
+          Insert Audio
+        </h2>
         <label className="flex h-64 w-full cursor-pointer flex-col items-center justify-center rounded-lg border-4 border-dashed border-gray-100 bg-gray-700 hover:bg-slate-800">
           <div className="flex flex-col items-center justify-center pt-5 pb-6">
             <div className="mb-3 h-10 w-10 text-gray-400">
@@ -130,7 +166,9 @@ export const AudioUploader = () => {
       </div>
 
       <div className="mt-10 w-full items-center justify-center">
-      <h2 className='text-xl ml-5 mb-2 font-bold text-violet-700 '>Insert Image</h2>
+        <h2 className="ml-5 mb-2 text-xl font-bold text-violet-700 ">
+          Insert Image
+        </h2>
 
         <label className="flex h-64 w-full cursor-pointer flex-col items-center justify-center rounded-lg border-4 border-dashed border-gray-100 bg-gray-700 hover:bg-slate-800">
           <div className="flex flex-col items-center justify-center pt-5 pb-6">

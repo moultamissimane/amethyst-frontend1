@@ -11,16 +11,18 @@ const index: NextPage = () => {
       <div className=" mt-24">
         <div className="flex flex-wrap  items-center justify-between px-2 md:px-0">
           <div className="mt-5 ml-10 duration-500 ease-in-out hover:rotate-6 hover:scale-125 lg:py-24">
-            <LottieMoon />
+            <video
+              loop
+              autoPlay
+              src="../../../public/GemStone.mp4"
+              className=""
+            ></video>
           </div>
           <div className="mt-20 w-full lg:w-6/12">
             <p className="mt-5 text-center indent-8 text-xl font-bold text-white lg:w-10/12">
-              You spend one-third of your life sleeping and by now you should be
-              pretty good at it. Unfortunately, for many of us, sleep isn't
-              restful. We toss and turn at night, wake up tired in the morning
-              and miss out on the health benefits a good night's sleep can give
-              us.With Amethyst, you'll learn how to create healthy sleep habits
-              and improve your chances for a more restful night's sleep.
+              I'm a firm believer that you should choose your crystals based on
+              your intuition. This is because your intuition knows what you need
+              more than your headspace does. Trust your gut.
             </p>
             <div className="mr-24 flex items-center justify-center space-y-4 duration-500 ease-in-out hover:rotate-6 hover:scale-125">
               <a
@@ -35,9 +37,9 @@ const index: NextPage = () => {
         <div className="mb-10 mt-10 flex cursor-pointer items-center justify-center space-y-4">
           <div className="animate-pulse" title="Scroll to Next Section">
             <div className="h-7 w-4 animate-bounce rounded-lg border-2 border-white">
-              <div className="mx-auto mt-1 h-3 w-1 rounded-xl border-2 border-white"></div>
+              <div className="mx-auto mt-1 h-3 w-2 rounded-xl border-2 border-white"></div>
             </div>
-            <span className="-ml-8 font-bold text-white ">Scroll Down</span>
+            <span className="-ml-8 font-bold text-white">Scroll Down</span>
           </div>
         </div>
 
@@ -82,7 +84,7 @@ const index: NextPage = () => {
           </div>
           <div className=" mx-5 max-h-96 flex-none overflow-hidden rounded-lg">
             <div className="">
-              <img src="/images/seleniteQuote.jpg" alt="Selenite" />
+              <img src="/images/RoseQuote.jpg" alt="Selenite" />
             </div>
           </div>
         </div>
@@ -108,22 +110,25 @@ const index: NextPage = () => {
               perfect crystals to reach for when you're unsure of what you want
               to work with!
               <br />
-              <span className="text-xl font-bold underline">SELENITE</span>
+              <span className="text-xl font-bold underline">ROSE QUARTZ</span>
               <div className="duration-500 ease-in-out hover:scale-90">
-                <img src="/images/RoseQuote.jpg" alt="Clear Quartz" />
+                <img
+                  src="/images/rose-quartz-png-5-Transparent-Images.png"
+                  alt="Clear Quartz"
+                />
               </div>
               <br />
-              Selenite is another powerful crystal associated with the crown
-              chakra. It is particularly beneficial for developing peace,
-              serenity and universal consciousness.
+              Rose Quartz is the stone of universal love. It is associated with
+              the heart chakra and has powerful properties that help us to
+              connect with our feelings of unconditional love, compassion and
+              forgiveness.
               <br />
-              Selenite is the perfect stone to meditate with if you want to
-              clear your mind space and gain clarity. It can help to develop
-              self awareness and make you more in tune with yourself and your
-              surroundings.
+              Rose quartz can be a very helpful stone to meditate with when you
+              are struggling with self love or not some help opening up and
+              trusting the universe.
               <br />
-              It's calming properties make it an amazing tool for accessing
-              meditative states.
+              It is an incredibly calming stone which can make you feel
+              completely full of love and peace during meditation.
               <br />
             </div>
           </div>

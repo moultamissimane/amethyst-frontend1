@@ -15,11 +15,11 @@ const Header = () => {
   return (
     <div className="fixed top-0 left-0 z-10 w-full bg-transparent mix-blend-difference backdrop-blur-lg">
       <nav className="relative px-6">
-        <div className="flex items-center justify-between">
+        <div className="flex items-center  justify-between">
           <Link href="/home">
             <img
               src="/images/logo.png"
-              className="hidden w-40 p-2 md:block lg:block xl:block"
+              className="hidden w-40 p-2 cursor-pointer md:block lg:block xl:block"
             />
               </Link>
             <img
