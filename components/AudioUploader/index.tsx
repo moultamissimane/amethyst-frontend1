@@ -14,6 +14,8 @@ import {
 } from '@firebase/storage'
 import { on } from 'events'
 import { LinearProgress } from '@mui/material'
+import axios from 'axios'
+import Swal from 'sweetalert2'
 
 export const AudioUploader = () => {
   const [imageAsFile, setImageAsFile] = useState(null)
@@ -28,7 +30,12 @@ export const AudioUploader = () => {
   const handleFireBaseUpload = (type: String) => {
     setImageIsLoading(true)
     if (!audioAsFile) {
-      return alert('Please select an audio')
+      // return alert('Please select an audio')
+      return Swal.fire({
+        icon: 'error',
+        title: 'Oops...',
+        text: 'Please select an audio'
+      })
     } else {
       // @ts-ignore
       console.log(storage)
@@ -89,29 +96,26 @@ export const AudioUploader = () => {
     }
   }, [audioAsFile])
 
-  // var myHeaders = new Headers()
-  // myHeaders.append(
-  //   'Authorization',
-  //   'b eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJpc3MiOiJsb2NhbGhvc3QiLCJhdWQiOiJsb2NhbGhvc3QiLCJpYXQiOjE2NTU0MjE2MzQsImV4cCI6MTY1NTQyNTIzNCwicmVmZXJlbmNlIjoiQkEzN0M0MzQiLCJyb2xlIjoiYWRtaW4iLCJoYXNoIjoiJDJ5JDEyJGcxaTU3a0hFQ2JUUmFybk1TMnVjRE81ZUs4ZmNzVXZsd01lSFBzMWU3OHNTUG90NldFRFZpIn0.iGcT50NU99OQ4y8F23oekKN3mXXNx2KqY0W7tto0rUE2yWVLqCjWDK1PfZJNu2qsbN05q_EtNKOsuWxTsFu9Pg'
-  // )
-  // myHeaders.append('Content-Type', 'application/json')
+  const [isLoading, setIsLoading] = useState(false)
+  const [audios, setAudios] = useState()
 
-  // var raw = JSON.stringify({
-  //   title: title,
-  //   src: url,
-  // })
-
-  // var requestOptions = {
-  //   method: 'POST',
-  //   headers: myHeaders,
-  //   body: raw,
-  //   redirect: 'follow',
-  // }
-
-  // fetch('http://localhost/AmethystBackend/playlist/addAudio', requestOptions)
-  //   .then((response) => response.text())
-  //   .then((result) => console.log(result))
-  //   .catch((error) => console.log('error', error))
+  const handleAudios = async (audio: []) => {
+    setIsLoading(true)
+    axios.post('http://localhost/AmethystBackend/playlist/addAudio', {
+      title: title,
+      src: URL
+    },{
+      headers: {
+          'Content-Type': 'application/json',
+          // getItem used to get the token from local storage
+          //localStorage allows to save data as key-value pairs in the browser for later use
+          "Authorization": `Bearer ${localStorage.getItem('token')}`
+      }
+    }).then(res =>{
+      console.log(res.data);
+      setIsLoading(false)
+    })
+  }
 
   return (
     <div className="m-3 w-[98%] rounded-xl p-3 shadow-md shadow-violet-600">
