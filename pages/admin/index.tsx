@@ -72,7 +72,7 @@ const dashboard: NextPage = () => {
           </div>
         </div>
 
-        <div className="sidebar fixed top-14 left-0 z-10 flex h-full w-14 flex-col border-none bg-violet-900 text-white transition-all duration-300 hover:w-64  md:w-64">
+        <div className="fixed top-14 left-0 z-10 flex h-full w-14 flex-col border-none bg-violet-900 text-white transition-all duration-300 hover:w-64  md:w-64">
           <div className="flex flex-grow flex-col justify-between overflow-y-auto overflow-x-hidden">
             <ul className="flex flex-col space-y-1 py-4">
               <li className="hidden px-5 md:block">
@@ -85,7 +85,7 @@ const dashboard: NextPage = () => {
               <li>
                 <a
                   href="#"
-                  className="text-white-600 hover:text-white-800 relative flex h-11 flex-row items-center border-l-4 border-transparent pr-6 hover:border-blue-500 hover:bg-blue-800 focus:outline-none "
+                  className="text-white-600 hover:text-white-800 relative flex h-11 flex-row items-center border-l-4 border-transparent pr-6 hover:border-violet-500 hover:bg-violet-800 focus:outline-none "
                 >
                   <span className="ml-4 inline-flex items-center justify-center">
                     <svg

@@ -1,8 +1,18 @@
+import Link from 'next/link'
 import React, { useEffect, useState } from 'react'
 // import Audio from '../../components/Audio'
 import Header from '../../components/Header'
 
 const index = () => {
+  const [audios, setAudios] = useState()
+
+  useEffect(() => {
+    fetch('http://localhost/AmethystBackend/playlist/getAudios')
+      .then((response) => response.json())
+      .then((result) => setAudios(result))
+      .catch((error) => console.log('error', error))
+  }, [])
+
   return (
     <>
       <Header />
@@ -36,32 +46,27 @@ const index = () => {
 
         <div className="mt-10">
           <div className="mr-20">
-            <div className="flex gap-10 border-b border-gray-800 hover:bg-gray-800">
-              <div className="w-8 flex-shrink-0 p-3">▶️</div>
-              <div className="w-8 flex-shrink-0 p-3">❤️</div>
-              <div className="w-full p-3">My Song Here</div>
-              <div className="w-full p-3">Eminem</div>
-              <div className="w-full p-3">Spotify</div>
-              <div className="w-12 flex-shrink-0 p-3 text-right">5:35</div>
-            </div>
-
-            <div className="flex gap-10 border-b border-gray-800 hover:bg-gray-800">
-              <div className="w-8 flex-shrink-0 p-3">▶️</div>
-              <div className="w-8 flex-shrink-0 p-3">❤️</div>
-              <div className="w-full p-3">My Song Here</div>
-              <div className="w-full p-3">Eminem</div>
-              <div className="w-full p-3">Spotify</div>
-              <div className="w-12 flex-shrink-0 p-3 text-right">5:35</div>
-            </div>
-
-            <div className="flex gap-10 border-b border-gray-800 hover:bg-gray-800">
-              <div className="w-8 flex-shrink-0 p-3">▶️</div>
-              <div className="w-8 flex-shrink-0 p-3">❤️</div>
-              <div className="w-full p-3">My Song Here</div>
-              <div className="w-full p-3">Eminem</div>
-              <div className="w-full p-3">Spotify</div>
-              <div className="w-12 flex-shrink-0 p-3 text-right">5:35</div>
-            </div>
+            {(audios || []).map((audio:{
+              title:string;
+              id:number;
+              src:string;
+              image:string;
+            }, idx) => {
+              return (
+                <Link
+                href={`playlist/song/${audio?.id}`}
+                >
+                <div className="flex gap-10 border-b border-gray-800 hover:bg-gray-800">
+                  <div className="w-8 flex-shrink-0 p-3">▶️</div>
+                  <div className="w-8 flex-shrink-0 p-3">❤️</div>
+                  <div className="w-full p-3">{audio?.title}</div>
+                  <div className="w-full p-3">Eminem</div>
+                  <div className="w-full p-3">Spotify</div>
+                  <div className="w-12 flex-shrink-0 p-3 text-right">5:35</div>
+                </div>
+                </Link>
+              )
+            })}
           </div>
         </div>
       </div>

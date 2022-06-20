@@ -1,7 +1,7 @@
 import * as React from 'react';
 import { styled, useTheme } from '@mui/material/styles';
 import Box from '@mui/material/Box';
-import Typography from '@mui/material/Typography';
+// import Typography from '@mui/material/Typography';
 import Slider from '@mui/material/Slider';
 import IconButton from '@mui/material/IconButton';
 import Stack from '@mui/material/Stack';
@@ -11,6 +11,9 @@ import FastForwardRounded from '@mui/icons-material/FastForwardRounded';
 import FastRewindRounded from '@mui/icons-material/FastRewindRounded';
 import VolumeUpRounded from '@mui/icons-material/VolumeUpRounded';
 import VolumeDownRounded from '@mui/icons-material/VolumeDownRounded';
+import ReactAudioPlayer from 'react-audio-player';
+import Link from 'next/link';
+import { useRouter } from 'next/router';
 
 const WallPaper = styled('div')({
   position: 'absolute',
@@ -70,26 +73,89 @@ const CoverImage = styled('div')({
   },
 });
 
-const TinyText = styled(Typography)({
-  fontSize: '0.75rem',
-  opacity: 0.38,
-  fontWeight: 500,
-  letterSpacing: 0.2,
-});
+// const TinyText = styled(Typography)({
+//   fontSize: '0.75rem',
+//   opacity: 0.38,
+//   fontWeight: 500,
+//   letterSpacing: 0.2,
+// });
 
-export const Audiio = ()=> {
+export const Audiio = ({ song }) => {
   const theme = useTheme();
+
+
   const duration = 200; // seconds
-  const [position, setPosition] = React.useState(32);
+  const [position, setPosition] = React.useState(0);
   const [paused, setPaused] = React.useState(false);
   function formatDuration(value) {
     const minute = Math.floor(value / 60);
     const secondLeft = value - minute * 60;
     return `${minute}:${secondLeft < 9 ? `0${secondLeft}` : secondLeft}`;
   }
+
+
+  const [id, setId] = React.useState(null)
+
+
+
+
+  // React.useEffect(()=>{
+
+
+  // },[song])
+
+
+
+
   const mainIconColor = theme.palette.mode === 'dark' ? '#fff' : '#000';
   const lightIconColor =
     theme.palette.mode === 'dark' ? 'rgba(255,255,255,0.4)' : 'rgba(0,0,0,0.4)';
+  const [audioVolume, setAudioVolume] = React.useState(100)
+
+  const audioRef = React.useRef()
+  const [New, setNew] = React.useState(1)
+
+
+
+
+
+
+  React.useEffect(() => {
+
+    if (song) {
+
+      audioRef.current.volume = audioVolume / 100
+    }
+
+  }, [audioVolume])
+
+  React.useEffect(() => {
+
+
+
+    if (song) {
+
+      if (paused) {
+
+        audioRef.current.play()
+
+      } else {
+
+        audioRef.current.pause()
+      }
+    }
+  }, [paused])
+
+  const router = useRouter()
+
+
+
+
+
+
+
+
+
   return (
     <Box sx={{ width: '100%', overflow: 'hidden' }}>
       <Widget>
@@ -97,12 +163,12 @@ export const Audiio = ()=> {
           <CoverImage>
             <img
               alt="Meditation"
-              src="../.. /images/breathingExercises.jpg"
+              src={song?.image}
             />
           </CoverImage>
           <Box sx={{ ml: 1.5, minWidth: 0 }}>
             <h2 variant="caption" color="text.secondary" fontWeight={500}>
-             Guided Meditation 
+              Guided Meditation
             </h2>
             <h1 className='font-bold' noWrap>
               <b>10 min to fully meditate</b>
@@ -112,6 +178,9 @@ export const Audiio = ()=> {
             </h3>
           </Box>
         </Box>
+        <ReactAudioPlayer
+          src='https://firebasestorage.googleapis.com/v0/b/amethyst-e71d3.appspot.com/o/audios%2FMorning%20Meditation%20to%20Spark%20Your%20Passion.mp3?alt=media&token=a227fbe2-8042-4e37-8681-1afe3c629a48'
+        />
         {/* <audio 
         className='hidden'
         src="https://firebasestorage.googleapis.com/v0/b/amethyst-e71d3.appspot.com/o/audios%2FMorning%20Meditation%20to%20Spark%20Your%20Passion.mp3?alt=media&token=a227fbe2-8042-4e37-8681-1afe3c629a48"> */}
@@ -128,30 +197,29 @@ export const Audiio = ()=> {
             color: theme.palette.mode === 'dark' ? '#fff' : 'rgba(0,0,0,0.87)',
             height: 4,
             '& .MuiSlider-thumb': {
-                width: 8,
-                height: 8,
-                transition: '0.3s cubic-bezier(.47,1.64,.41,.8)',
-                '&:before': {
-                    boxShadow: '0 2px 12px 0 rgba(0,0,0,0.4)',
-                },
-                '&:hover, &.Mui-focusVisible': {
-                    boxShadow: `0px 0px 0px 8px ${
-                        theme.palette.mode === 'dark'
-                        ? 'rgb(255 255 255 / 16%)'
-                        : 'rgb(0 0 0 / 16%)'
-                    }`,
+              width: 8,
+              height: 8,
+              transition: '0.3s cubic-bezier(.47,1.64,.41,.8)',
+              '&:before': {
+                boxShadow: '0 2px 12px 0 rgba(0,0,0,0.4)',
+              },
+              '&:hover, &.Mui-focusVisible': {
+                boxShadow: `0px 0px 0px 8px ${theme.palette.mode === 'dark'
+                  ? 'rgb(255 255 255 / 16%)'
+                  : 'rgb(0 0 0 / 16%)'
+                  }`,
               },
               '&.Mui-active': {
-                  width: 20,
-                  height: 20,
-                },
+                width: 20,
+                height: 20,
+              },
             },
             '& .MuiSlider-rail': {
               opacity: 0.28,
             },
           }}
-          />
-              {/* </audio> */}
+        />
+        {/* </audio> */}
         <Box
           sx={{
             display: 'flex',
@@ -160,8 +228,8 @@ export const Audiio = ()=> {
             mt: -2,
           }}
         >
-          <TinyText>{formatDuration(position)}</TinyText>
-          <TinyText>-{formatDuration(duration - position)}</TinyText>
+          <div className='font-normal text-sm'>{formatDuration(position)}</div>
+          <div className='font-normal text-sm'>-{formatDuration(duration - position)}</div>
         </Box>
         <Box
           sx={{
@@ -171,14 +239,17 @@ export const Audiio = ()=> {
             mt: -1,
           }}
         >
-          <IconButton aria-label="previous song">
-            <FastRewindRounded fontSize="large" htmlColor={mainIconColor} />
-          </IconButton>
+                    <a href={`/playlist/song/${+song?.id - 1}`}>
+
+            <IconButton aria-label="previous song">
+              <FastRewindRounded fontSize="large" htmlColor={mainIconColor} />
+            </IconButton>
+          </a>
           <IconButton
             aria-label={paused ? 'play' : 'pause'}
             onClick={() => setPaused(!paused)}
           >
-            {paused ? (
+            {!paused ? (
               <PlayArrowRounded
                 sx={{ fontSize: '3rem' }}
                 htmlColor={mainIconColor}
@@ -187,15 +258,22 @@ export const Audiio = ()=> {
               <PauseRounded sx={{ fontSize: '3rem' }} htmlColor={mainIconColor} />
             )}
           </IconButton>
-          <IconButton aria-label="next song">
-            <FastForwardRounded fontSize="large" htmlColor={mainIconColor} />
-          </IconButton>
+          <a href={`/playlist/song/${+song?.id + 1}`}>
+            <IconButton
+
+              aria-label="next song">
+
+              <FastForwardRounded fontSize="large" htmlColor={mainIconColor} />
+            </IconButton>
+          </a>
         </Box>
         <Stack spacing={2} direction="row" sx={{ mb: 1, px: 1 }} alignItems="center">
           <VolumeDownRounded htmlColor={lightIconColor} />
           <Slider
             aria-label="Volume"
-            defaultValue={30}
+            defaultValue={audioVolume}
+            value={audioVolume}
+            onChange={(e) => setAudioVolume(e.target.value)}
             sx={{
               color: theme.palette.mode === 'dark' ? '#fff' : 'rgba(0,0,0,0.87)',
               '& .MuiSlider-track': {
@@ -216,6 +294,13 @@ export const Audiio = ()=> {
           />
           <VolumeUpRounded htmlColor={lightIconColor} />
         </Stack>
+        {(song && New) &&
+
+          <audio className="hidden" ref={audioRef} controls>
+
+            <source src={song?.src} type="audio/ogg" />
+          </audio>
+        }
       </Widget>
       <WallPaper />
     </Box>
