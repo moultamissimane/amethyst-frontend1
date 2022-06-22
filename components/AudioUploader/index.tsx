@@ -4,7 +4,7 @@ import { LottieJSON } from '../LottieJSON'
 import CloudUploadIcon from '@mui/icons-material/CloudUpload'
 import Box from '@mui/material/Box'
 import TextField from '@mui/material/TextField'
-import audioWave from '../../public/audioWave.json'
+// import audioWave from '../../public/audioWave.json'
 import { storage } from '../../firebase/index'
 import {
   ref,
@@ -152,13 +152,17 @@ export const AudioUploader = () => {
   return (
     <div className="m-3 w-[98%] rounded-xl p-3 shadow-md shadow-violet-600">
       <div className="w-full items-center ">
+        <div className='flex justify-between'>
         <h2 className="ml-5 mb-2 text-xl font-bold text-violet-700 ">
           Insert Audio Name
         </h2>
+
         <button
         type='button'
         onClick={handleUploadAudioToBackend}
-        >Go baby Go</button>
+        className="rounded-md border-2 px-8 py-1 border-black mx-6 font-medium text-lg hover:bg-purple-700 hover:text-white hover:border-slate-100"
+        >Send</button>
+        </div>
         <div className="my-10 ml-5">
           <Box
             sx={{
