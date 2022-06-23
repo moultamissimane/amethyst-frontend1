@@ -95,6 +95,10 @@ export const Audiio = ({ song }) => {
   const audioRef = React.useRef()
   const [New, setNew] = React.useState(1)
 
+  React.useEffect(()=> {
+    console.log(audioRef?.current?.currentTime);
+  },[])
+
 
 
 
@@ -197,7 +201,7 @@ export const Audiio = ({ song }) => {
           }}
         >
           <div className='font-normal text-sm'>{formatDuration(position)}</div>
-          <div className='font-normal text-sm'>-{formatDuration(duration - position)}</div>
+          <div className='font-normal text-sm'>-{formatDuration(~~audioRef?.current?.duration)}</div>
         </Box>
         <Box
           sx={{
