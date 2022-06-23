@@ -67,18 +67,8 @@ const CoverImage = styled('div')({
   overflow: 'hidden',
   flexShrink: 0,
   borderRadius: 8,
-  backgroundColor: 'rgba(0,0,0,0.08)',
-  '& > img': {
-    width: '100%',
-  },
 });
 
-// const TinyText = styled(Typography)({
-//   fontSize: '0.75rem',
-//   opacity: 0.38,
-//   fontWeight: 500,
-//   letterSpacing: 0.2,
-// });
 
 export const Audiio = ({ song }) => {
   const theme = useTheme();
@@ -95,16 +85,6 @@ export const Audiio = ({ song }) => {
 
 
   const [id, setId] = React.useState(null)
-
-
-
-
-  // React.useEffect(()=>{
-
-
-  // },[song])
-
-
 
 
   const mainIconColor = theme.palette.mode === 'dark' ? '#fff' : '#000';
@@ -149,15 +129,10 @@ export const Audiio = ({ song }) => {
   const router = useRouter()
 
 
-
-
-
-
-
-
+  const [opacityValue, setOpacityValue] = React.useState(1)
 
   return (
-    <Box sx={{ width: '100%', overflow: 'hidden' }}>
+    <Box sx={{ width: '100%', bgColor: 'black', overflow: 'hidden' }}>
       <Widget>
         <Box sx={{ display: 'flex', alignItems: 'center' }}>
           <CoverImage>
@@ -173,18 +148,11 @@ export const Audiio = ({ song }) => {
             <h1 className='font-bold' noWrap>
               <b>10 min to fully meditate</b>
             </h1>
-            <h3 className='font-semibold text-gray-600' noWrap letterSpacing={-0.25}>
+            <h3 className='font-semibold text-black' noWrap letterSpacing={-0.25}>
               Imane's Playlist
             </h3>
           </Box>
         </Box>
-        <ReactAudioPlayer
-          src='https://firebasestorage.googleapis.com/v0/b/amethyst-e71d3.appspot.com/o/audios%2FMorning%20Meditation%20to%20Spark%20Your%20Passion.mp3?alt=media&token=a227fbe2-8042-4e37-8681-1afe3c629a48'
-        />
-        {/* <audio 
-        className='hidden'
-        src="https://firebasestorage.googleapis.com/v0/b/amethyst-e71d3.appspot.com/o/audios%2FMorning%20Meditation%20to%20Spark%20Your%20Passion.mp3?alt=media&token=a227fbe2-8042-4e37-8681-1afe3c629a48"> */}
-
         <Slider
           aria-label="time-indicator"
           size="small"
@@ -239,7 +207,7 @@ export const Audiio = ({ song }) => {
             mt: -1,
           }}
         >
-                    <a href={`/playlist/song/${+song?.id - 1}`}>
+          <a href={`/playlist/song/${+song?.id - 1}`}>
 
             <IconButton aria-label="previous song">
               <FastRewindRounded fontSize="large" htmlColor={mainIconColor} />
@@ -302,7 +270,7 @@ export const Audiio = ({ song }) => {
           </audio>
         }
       </Widget>
-      <WallPaper />
+      <WallPaper className='elementToFadeInAndOut' />
     </Box>
   );
 }

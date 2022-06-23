@@ -6,6 +6,7 @@ import FavoriteIcon from '@mui/icons-material/Favorite'
 import ListIcon from '@mui/icons-material/List'
 import LogoutIcon from '@mui/icons-material/Logout';
 import { red } from '@mui/material/colors'
+import { logoutFunc } from "./auth/LoginCp";
 
 
 const Dropdown = ({ color }) => {
@@ -94,7 +95,9 @@ const Dropdown = ({ color }) => {
 
               <div className="h-0 my-2 border border-solid border-t-0 border-slate-800 opacity-25" />
               <Link href="/landingPages" passHref>
-                <div
+                <button
+                  type="submit"
+                  onClick={logoutFunc}
                   className={
                     "text-sm py-2 px-4 cursor-pointer font-bold space-x-3 w-full whitespace-nowrap bg-transparent " +
                     (color === "white" ? " text-black" : "text-white")
@@ -102,7 +105,7 @@ const Dropdown = ({ color }) => {
                 >
                   <LogoutIcon />
                   <span>Logout</span>
-                </div>
+                </button>
               </Link>
             </div>
           </div>

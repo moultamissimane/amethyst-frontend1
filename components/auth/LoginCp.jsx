@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import { useRouter } from 'next/router'
+import Router from "next/router"
 import axios from 'axios'
 import { motion } from 'framer-motion'
 import Link from 'next/link'
@@ -10,13 +11,24 @@ import IconButton from '@mui/material/IconButton'
 import CloseIcon from '@mui/icons-material/Close'
 import { getUser, getToken } from '../../utils/index'
 
+
+
+
+export const logoutFunc = () => {
+	localStorage.removeItem('token');
+	localStorage.removeItem('user');
+	Router.push('/landingPages')
+};
+
+
+
 const LoginCp = () => {
 
 	const [inputs, setInputs] = useState({})
-	// const navigate = useNavigate()
-
 	const [snackBarMessage, setSnackBarMessage] = useState('')
 	const [snackBarOpen, setSnackBarOpen] = useState(false)
+	const router = useRouter()
+
 
 	const handleChange = (event) => {
 		const name = event.target.name;
@@ -39,7 +51,6 @@ const LoginCp = () => {
 		setSnackBarOpen(false)
 	}
 
-	const router = useRouter()
 	const handleSubmit = (event) => {
 		event.preventDefault();
 		console.log(inputs)
@@ -51,7 +62,7 @@ const LoginCp = () => {
 				localStorage.setItem('token', res.data.Token)
 				localStorage.setItem('user', JSON.stringify(res.data.User))
 				if (res.data.Token) {
-					setSnackBarMessage('Loged in Successfully 🎉')
+					setSnackBarMessage('Logged in Successfully 🎉')
 					setSnackBarOpen(true)
 					setTimeout(() => {
 						router.push('/home')
@@ -64,10 +75,9 @@ const LoginCp = () => {
 			}
 			)
 	}
-	const logout = () => {
-		localStorage.removeItem('token');
-		setIsLoggedin(false);
-	};
+
+
+	
 
 	const [isLoading, setIsLoading] = useState(false)
 
@@ -157,7 +167,7 @@ const LoginCp = () => {
 					/>
 				}
 			</motion.div >
-		</>
+	</>
 	)
 }
 export default LoginCp;

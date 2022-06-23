@@ -1,8 +1,24 @@
 import { NextPage } from 'next'
-import React from 'react'
+import { useRouter } from 'next/router'
+import React, { useEffect } from 'react'
 import { AudioUploader } from '../../components/AudioUploader'
+import { logoutFunc } from "../../components/auth/LoginCp";
 
 const dashboard: NextPage = () => {
+
+  const Router = useRouter()
+
+
+  useEffect(()=>{
+    if(window){
+      JSON.parse(localStorage.getItem('user') || '').role !== 'admin' ? Router.push('/auth/login')  : null
+    }
+  },[])
+
+
+
+
+
   return (
     <div>
       <div className="flex min-h-screen flex-auto flex-shrink-0 flex-col bg-white text-black antialiased ">
@@ -45,8 +61,8 @@ const dashboard: NextPage = () => {
                 <div className="mx-3 block h-6 w-px bg-gray-400 "></div>
               </li>
               <li>
-                <a
-                  href="#"
+                <button
+                  onClick={logoutFunc}
                   className="mr-4 flex items-center hover:text-blue-100"
                 >
                   <span className="mr-1 inline-flex">
@@ -66,7 +82,7 @@ const dashboard: NextPage = () => {
                     </svg>
                   </span>
                   Logout
-                </a>
+                </button>
               </li>
             </ul>
           </div>

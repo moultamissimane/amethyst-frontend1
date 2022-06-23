@@ -97,7 +97,7 @@ const Footer = () => {
                     <p className="text-sm text-violet-400">© Copyright 2021. All Rights Reserved.</p>
 
                     <div className='text-white text-center '>
-                        <p>Made with💖by Amethyst</p>
+                        <p>Made with 💖 by Amethyst</p>
                     </div>
                     <div className="flex mt-3 -mx-2 sm:mt-0">
 

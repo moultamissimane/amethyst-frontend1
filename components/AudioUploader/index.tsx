@@ -31,45 +31,53 @@ export const AudioUploader = () => {
 
   const handleFireBaseUpload = (type: String) => {
     setImageIsLoading(true)
-     if(audioAsFile ||  imageAsFile) {
+    if (audioAsFile || imageAsFile) {
       // @ts-ignore
       console.log(storage)
       // @ts-ignore
-      let uploadTask;
+      let uploadTask
       // @ts-ignore
       const storageRef = ref(storage, `/${type}/${audioAsFile?.name}`)
       if (type === 'images') {
         // @ts-ignore
         uploadTask = uploadBytesResumable(storageRef, imageAsFile)
-      } 
+      }
       if (type === 'audios') {
         // @ts-ignore
+
+        // create ref to storage bucket and create a file from the audio data then we create a new upload task then we return the uploadTask
         uploadTask = uploadBytesResumable(storageRef, audioAsFile)
       }
       // @ts-ignore
-      
+
       uploadTask.on(
         'state_changed',
         (snapshot) => {
           const prog = Math.round(
+
+            // snapshot.bytesTransferred is the number of bytes transferred 
+
             (snapshot.bytesTransferred / snapshot.totalBytes) * 100
-            )
-            if (type === 'images') {
-              setProgress(prog)
-            } else if (type === 'audios') {
-              setProgressAudio(prog)
-            }
-          },
-          (error) => {
-            console.log(error)
-          },
-          () => {
+          )
+          if (type === 'images') {
+            setProgress(prog)
+          } else if (type === 'audios') {
+            setProgressAudio(prog)
+          }
+        },
+        (error) => {
+          console.log(error)
+        },
+        () => {
           // @ts-ignore
+
+          // we log the url to the console after we get the downloaded url from the snapshot
+
           getDownloadURL(uploadTask.snapshot.ref).then((url) => {
             console.log(url)
             if (type === 'images') {
               setImageURL(url)
-            } 
+            }
             if (type === 'audios') {
               setAudioURL(url)
             }
@@ -77,7 +85,7 @@ export const AudioUploader = () => {
           })
         }
       )
-    }else{
+    } else {
       return Swal.fire({
         icon: 'error',
         title: 'Oops...',
@@ -91,6 +99,9 @@ export const AudioUploader = () => {
     if (e?.target?.files[0]) {
       // @ts-ignore
       const image = e?.target?.files[0]
+
+      // set the imageFile to the image file that has been uploaded 
+
       setImageAsFile((imageFile) => image)
     }
   }
@@ -98,13 +109,22 @@ export const AudioUploader = () => {
     // @ts-ignore
     if (e?.target?.files[0]) {
       // @ts-ignore
-      const audio = e?.target?.files[0]
+
+      // to access the audio file 
+
+      const audio = e?.target?.files[0]  
+
+      // set the audioFile to the audio file that has been uploaded 
+
       setAudioAsFile((audioFile) => audio)
     }
   }
-
+  
   useEffect(() => {
     if (imageAsFile) {
+
+      // upload images to firebase storage in the images folder in storage
+
       handleFireBaseUpload('images')
       setImageAsFile(null)
     }
@@ -112,6 +132,8 @@ export const AudioUploader = () => {
 
   useEffect(() => {
     if (audioAsFile) {
+
+      // upload audio to firebase storage in the audios folder in storage
       handleFireBaseUpload('audios')
       setAudioAsFile(null)
     }
@@ -122,27 +144,25 @@ export const AudioUploader = () => {
 
   const handleUploadAudioToBackend = async () => {
     setIsLoading(true)
-    let token  = await localStorage.getItem('token')
+    let token = await localStorage.getItem('token')
     console.log(token)
-    var myHeaders = new Headers();
-    
-    
+    var myHeaders = new Headers()
+
     var raw = JSON.stringify({
       title: title,
-      image: audioURL ,
+      image: audioURL,
       src: imageURL,
     })
-    console.log(raw);
-
-
+    console.log(raw)
 
     fetch('http://localhost/AmethystBackend/playlist/addAudio', {
-      method:'POST',
+      method: 'POST',
       headers: {
         'Content-Type': 'application/json',
-        'Authorization':"Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJpc3MiOiJsb2NhbGhvc3QiLCJhdWQiOiJsb2NhbGhvc3QiLCJpYXQiOjE2NTU3MzcwODgsImV4cCI6MTY1NTc0MDY4OCwicmVmZXJlbmNlIjoiQkEzN0M0MzQiLCJyb2xlIjoiYWRtaW4iLCJoYXNoIjoiJDJ5JDEyJGcxaTU3a0hFQ2JUUmFybk1TMnVjRE81ZUs4ZmNzVXZsd01lSFBzMWU3OHNTUG90NldFRFZpIn0.ePxEe-MF9Z1gev_PsEcV0Iut1A2DQ8lUEFJAen99xVpmAGR5crgv-pGiLsOJZd1IQrDNmE96fRjvxepeR7ZdAg"
+        Authorization:
+          `Bearer ${localStorage.getItem('token')}`,
       },
-      body: raw
+      body: raw,
     })
       .then((response) => response.json())
       .then((result) => console.log(result))
@@ -152,16 +172,18 @@ export const AudioUploader = () => {
   return (
     <div className="m-3 w-[98%] rounded-xl p-3 shadow-md shadow-violet-600">
       <div className="w-full items-center ">
-        <div className='flex justify-between'>
-        <h2 className="ml-5 mb-2 text-xl font-bold text-violet-700 ">
-          Insert Audio Name
-        </h2>
+        <div className="flex justify-between">
+          <h2 className="ml-5 mb-2 text-xl font-bold text-violet-700 ">
+            Insert Audio Name
+          </h2>
 
-        <button
-        type='button'
-        onClick={handleUploadAudioToBackend}
-        className="rounded-md border-2 px-8 py-1 border-black mx-6 font-medium text-lg hover:bg-purple-700 hover:text-white hover:border-slate-100"
-        >Send</button>
+          <button
+            type="button"
+            onClick={handleUploadAudioToBackend}
+            className="mx-6 rounded-md border-2 border-black px-8 py-1 text-lg font-medium hover:border-slate-100 hover:bg-purple-700 hover:text-white"
+          >
+            Send
+          </button>
         </div>
         <div className="my-10 ml-5">
           <Box
@@ -180,7 +202,7 @@ export const AudioUploader = () => {
           </Box>
         </div>
         <h2 className="ml-5 mb-2 text-xl font-bold text-violet-700 ">
-          Insert Audio {audioURL}
+          Insert Audio 
         </h2>
         <label className="flex h-64 w-full cursor-pointer flex-col items-center justify-center rounded-lg border-4 border-dashed border-gray-100 bg-gray-700 hover:bg-slate-800">
           <div className="flex flex-col items-center justify-center pt-5 pb-6">
@@ -192,7 +214,7 @@ export const AudioUploader = () => {
               drop
             </p>
             <p className="text-xs text-gray-500 dark:text-gray-400">
-              MP3, chihaja
+              MP3
             </p>
           </div>
           <input
@@ -200,7 +222,7 @@ export const AudioUploader = () => {
             ref={inputAudioRef}
             onChange={handleChange}
             type="file"
-            accept='audio/*'
+            accept="audio/*"
             className="hidden"
           />
         </label>
@@ -212,7 +234,7 @@ export const AudioUploader = () => {
 
       <div className="mt-10 w-full items-center justify-center">
         <h2 className="ml-5 mb-2 text-xl font-bold text-violet-700 ">
-          Insert Image {imageURL}
+          Insert Image 
         </h2>
 
         <label className="flex h-64 w-full cursor-pointer flex-col items-center justify-center rounded-lg border-4 border-dashed border-gray-100 bg-gray-700 hover:bg-slate-800">
@@ -233,7 +255,7 @@ export const AudioUploader = () => {
             ref={inputRef}
             onChange={handleChangeAudio}
             type="file"
-            accept='image/*'
+            accept="image/*"
             className="hidden"
           />
         </label>

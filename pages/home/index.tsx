@@ -1,12 +1,15 @@
-import React, { useRef } from 'react'
+import React, { useEffect, useRef } from 'react'
 import { NextPage } from 'next'
 import Header from '../../components/Header'
 import Lottie from '../../components/lottie'
 import Footer from '../../components/Footer'
 import Link from 'next/link'
+import ReactAudioPlayer from 'react-audio-player'
+import { useRouter } from 'next/router'
 
 const home: NextPage = () => {
   const testimonialsRef = useRef<any>(null)
+  const Router  = useRouter()
 
   const scrollMe = () => {
     const element = testimonialsRef.current
@@ -18,6 +21,12 @@ const home: NextPage = () => {
     })
   }
 
+  useEffect(()=>{
+    if(window){
+      localStorage.getItem('token') == null ? Router.push('/auth/login')  : null
+    }
+  },[])
+
   return (
     <div className="relative flex min-h-screen min-w-full items-center justify-center overflow-auto bg-black">
       <Header />
@@ -25,6 +34,10 @@ const home: NextPage = () => {
         <div className="mt-24 flex flex-wrap items-center justify-evenly px-2 md:px-0">
           <div className="-mt-10 lg:w-6/12 lg:py-24 xl:py-32 ">
             <Lottie />
+            <ReactAudioPlayer 
+            className='hidden'
+            src="Waves.mp3" 
+            autoPlay  />
           </div>
           <div className="w-full items-center justify-center lg:w-6/12">
             <p className="text-center indent-8 text-xl font-bold text-white  lg:w-10/12">

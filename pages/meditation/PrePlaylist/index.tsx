@@ -4,6 +4,7 @@ import Header from '../../../components/Header'
 import Footer from '../../../components/Footer'
 import Link from 'next/link'
 import LockIcon from '@mui/icons-material/Lock';
+import Image from 'next/image'
 
 
 const index: NextPage = () => {
@@ -131,10 +132,10 @@ const index: NextPage = () => {
           <div className="grid bg-black text-gray-800 lg:grid-cols-4 md:grid-cols-2 md:px-12">
             {cards?.map((e, i) => (
               <div key={i} className=" mx-auto flex justify-center items-center max-w-sm flex-col overflow-hidden p-3 text-sm  sm:mx-auto md:m-5 ease-in-out duration-500  hover:scale-125">
-                  <Link href={"../../playlist/song"}>
+                  <Link href={"../../playlist"}>
                 <div className="cursor-pointer hover:shadow-slate-50">
                   
-                 <img className='w-80 h-60 rounded-xl shadow-sm border-white border-4' src={(e.image)} alt="" />
+                 <Image width={320} height={240} className=' rounded-xl shadow-sm border-white border-8 ' src={(e.image)} alt="" quality={10}  />
                   
                 </div>
                   </Link>

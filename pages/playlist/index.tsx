@@ -12,21 +12,22 @@ const index = () => {
     fetch('http://localhost/AmethystBackend/playlist/getAudios')
       .then((response) => response.json())
       .then((result) => setAudios(result))
+
       .catch((error) => console.log('error', error))
   }, [])
 
   return (
     <>
       <Header />
-      <div className="flex min-h-screen justify-between bg-black  p-28 text-gray-300">
+      <div className="flex fixed min-h-screen justify-between bg-black  p-28 text-gray-300">
         <div className="w-1/4 rounded-2xl border-4 p-6 duration-500 ease-in-out hover:shadow-md hover:shadow-slate-50">
           <img
             className="my-3 items-center rounded-2xl border-2 border-white "
             src="../../../images/Group4.png"
             alt="Finding inner peace"
           />
-          <IconButton className='hover:bg-white ml-28 -mt-14 bg-purple-300'>
-            <PlayArrowRounded className='text-white w-7 h-7 hover:text-slate-600'/>
+          <IconButton className="ml-28 -mt-14 bg-purple-300 hover:bg-white">
+            <PlayArrowRounded className="h-7 w-7 text-white hover:text-slate-600" />
           </IconButton>
           <div className="flex flex-col justify-center">
             <h4 className="mt-0 mb-2 text-center text-xs uppercase text-gray-300">
@@ -69,17 +70,19 @@ const index = () => {
               ) => {
                 return (
                   <Link href={`playlist/song/${audio?.id}`}>
-                    <div className="flex justify-between gap-96 rounded-lg border-b border-gray-800 bg-white text-lg text-black hover:text-purple-700">
-                      {/* <div className="w-8 flex-shrink-0 p-3">▶️</div> */}
-                      {/* <div className=""><PlayArrowRounded/></div> */}
+                    <div className="mb-3 flex justify-between gap-96 rounded-lg p-2 text-black shadow-md transition delay-150 duration-300 ease-in-out hover:-translate-y-1 hover:scale-110 hover:bg-violet-300 hover:text-purple-700 hover:shadow-violet-600">
                       <div className="flex">
-                        <PlayArrowRounded />
-                        <img className="h-12 w-12" src={audio?.image} alt="" />
-                        <div className="w-full p-3">{audio?.title}</div>
+                        <PlayArrowRounded className="z-10 mt-4 text-white" />
+                        <img
+                          className="h-12 w-12 rounded-md hover:opacity-5"
+                          src={audio?.image}
+                          alt=""
+                        />
+                        <div className="w-full p-3 text-white">
+                          {audio?.title}
+                        </div>
                       </div>
-                      {/* <div className="w-full p-3">Eminem</div>
-                  <div className="w-full p-3">Spotify</div> */}
-                      <div className="w-12 flex-shrink-0 p-3 text-right">
+                      <div className="w-12 flex-shrink-0 p-3 text-right text-white">
                         5:35
                       </div>
                     </div>
