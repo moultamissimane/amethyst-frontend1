@@ -12,7 +12,6 @@ const index = () => {
     fetch('http://localhost/AmethystBackend/playlist/getAudios')
       .then((response) => response.json())
       .then((result) => setAudios(result))
-
       .catch((error) => console.log('error', error))
   }, [])
 
