@@ -8,7 +8,7 @@ const Lottie = () => {
         useEffect(() => {
             lottie.loadAnimation({
               container: anime.current,
-              renderer: "svg",
+              renderer: "svg", 
               loop: true,
               autoplay: true,
               animationData: sleepyMoon,
